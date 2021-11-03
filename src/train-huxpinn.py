@@ -43,6 +43,6 @@ x_data, t_data, a_data, v_data = np.meshgrid( np.linspace(-21.0, 63.0, 100),
                                               np.linspace(1, 1, 1), 
                                               np.linspace(1, 1, 1))
 
-h = model.train([x_data, t_data, a_data, v_data], 2*['zero'], learning_rate=0.001, batch_size=1024, epochs=50000)
-model.save_weights('model/model.hdf5')
+h = model.train([x_data, t_data, a_data, v_data], 2*['zero'], learning_rate=0.001, batch_size=1024, epochs=20000)
+model.save_weights('../models/model.hdf5')
 
