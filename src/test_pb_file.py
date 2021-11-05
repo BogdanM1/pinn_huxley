@@ -6,9 +6,9 @@ from keras.layers import Dense
 from keras import backend as K
 
 sample = np.array( [
-                    [0, 1, 0, 0],
-                    [ 0, 1, 0, 0],
-                    [0, 1, 0, 0]
+                    [0.002, 10.4],
+                    [ 0.001, 10.4],
+                    [0, 10.4]
                     ] )
 
 with tf.compat.v1.Session() as sess:	    
@@ -27,7 +27,7 @@ model_path    = '../models/model.hdf5'
 K.set_learning_phase(0)	
 
 model = Sequential()
-model.add(Dense(20, input_dim = 4, activation='tanh'))
+model.add(Dense(20, input_dim = 2, activation='tanh'))
 for i in range(7):
   model.add(Dense(20, activation='tanh'))
 model.add(Dense(1))
