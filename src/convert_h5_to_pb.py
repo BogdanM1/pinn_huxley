@@ -40,9 +40,9 @@ model_path    = '../models/model.hdf5'
 K.set_learning_phase(0)	
 
 model = Sequential()
-model.add(Dense(20, input_dim = 2, activation='tanh'))
+model.add(Dense(100, input_dim = 2, activation='tanh'))
 for i in range(7):
-  model.add(Dense(20, activation='tanh'))
+  model.add(Dense(100, activation='tanh'))
 model.add(Dense(1))
 model.load_weights(model_path)
 model.compile(loss='mse', optimizer='adam')    
