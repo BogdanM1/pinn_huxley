@@ -1,4 +1,5 @@
 import numpy as np 
+import sys
 import tensorflow as tf
 from tensorflow.python.platform import gfile
 from keras.models import  Sequential
@@ -6,7 +7,7 @@ from keras.layers import Dense
 from keras import backend as K
 
 t_test = np.array([0,0.001,0.002])
-x_test = np.arange(-20.8,62.4,5.2)
+x_test = np.arange(-20.8,63,5.2)
 test_sample = []
 for t_val in t_test:
   for x_val in x_test: 
@@ -32,7 +33,12 @@ with tf.compat.v1.Session() as sess:
 		tensor_input = sess.graph.get_tensor_by_name('import/dense_input:0')	        
 		tensor_output = sess.graph.get_tensor_by_name('import/dense_8/BiasAdd:0')	        
 		predictions = sess.run(tensor_output, {tensor_input:test_sample})	        
-		print_predictions(predictions)    
+		original_stdout = sys.stdout	        
+		with open('../results/protobuf_output.csv', 'w') as f:	        
+		  sys.stdout = f	        
+		  print_predictions(predictions)	        
+		  sys.stdout = original_stdout             
+		   
 
 
 model_path    = '../models/model.hdf5'
@@ -46,5 +52,9 @@ model.add(Dense(1))
 model.load_weights(model_path)
 model.compile(loss='mse', optimizer='adam')
 output = model.predict(test_sample)
-print_predictions(output)
+original_stdout = sys.stdout 
+with open('../results/h5_output.csv', 'w') as f:
+  sys.stdout = f 
+  print_predictions(output) 
+  sys.stdout = original_stdout
 
