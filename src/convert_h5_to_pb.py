@@ -2,11 +2,9 @@ import tensorflow_addons as tfa
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
-import tensorflow as tf
-
-from keras import backend as K
-from keras.models import  Sequential
-from keras.layers import Dense
+from tensorflow.keras import backend as K
+from tensorflow.keras.models import  Sequential
+from tensorflow.keras.layers import Dense
 
 def freeze_session(session, keep_var_names=None, output_names=None, clear_devices=True):
     """
@@ -37,8 +35,6 @@ def freeze_session(session, keep_var_names=None, output_names=None, clear_device
         return frozen_graph
 
 model_path    = '../models/model.hdf5'
-K.set_learning_phase(0)	
-
 model = Sequential()
 model.add(Dense(100, input_dim = 2, activation='tanh'))
 for i in range(3):

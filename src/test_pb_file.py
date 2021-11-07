@@ -2,17 +2,16 @@ import numpy as np
 import sys
 import tensorflow as tf
 from tensorflow.python.platform import gfile
-from keras.models import  Sequential
-from keras.layers import Dense
-from keras import backend as K
+from tensorflow.keras.models import  Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras import backend as K
 
-t_test = np.array([0,0.001,0.002])
+t_test = np.array([0,0.001,0.002, 0.4])
 x_test = np.arange(-20.8,63,5.2)
 test_sample = []
 for t_val in t_test:
   for x_val in x_test: 
-    test_sample += [[t_val,x_val]]
-    
+    test_sample += [[t_val,x_val]]   
 test_sample = np.array(test_sample) 
 
 
@@ -42,8 +41,6 @@ with tf.compat.v1.Session() as sess:
 
 
 model_path    = '../models/model.hdf5'
-K.set_learning_phase(0)	
-
 model = Sequential()
 model.add(Dense(100, input_dim = 2, activation='tanh'))
 for i in range(3):

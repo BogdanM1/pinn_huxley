@@ -5,8 +5,6 @@ from keras.models import  Sequential
 from keras.layers import Dense
     
 model_path    = '../models/model.hdf5'
-K.set_learning_phase(0)	
-
 model = Sequential()
 model.add(Dense(100, input_dim = 2, activation='tanh'))
 for i in range(3):
@@ -15,7 +13,7 @@ model.add(Dense(1))
 model.load_weights(model_path)
 model.compile(loss='mse', optimizer='adam')
     
-t_test = np.array([0,0.001,0.002])
+t_test = np.array([0,0.001,0.002, 0.4])
 x_test = np.arange(-20.8,63,5.2)
 test_sample = []
 for t_val in t_test:
