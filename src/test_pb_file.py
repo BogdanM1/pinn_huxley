@@ -46,7 +46,7 @@ K.set_learning_phase(0)
 
 model = Sequential()
 model.add(Dense(100, input_dim = 2, activation='tanh'))
-for i in range(7):
+for i in range(3):
   model.add(Dense(100, activation='tanh'))
 model.add(Dense(1))
 model.load_weights(model_path)

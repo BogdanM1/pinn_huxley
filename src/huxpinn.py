@@ -20,6 +20,8 @@ seed(_seed)
 random.seed(_seed)
 tf.random.set_seed(_seed)
 tf.compat.v1.set_random_seed(_seed)
+sn.set_random_seed(_seed)
+
 optimizer = tf.keras.optimizers.Adam(lr=1e-3, beta_1=0.99, beta_2=0.9999)
 glorot_uniform = tf.keras.initializers.glorot_uniform(seed=_seed)
 loss = 'mse'
@@ -77,7 +79,7 @@ stretch = 1.0
 stretch_prev = 1.0 
 a = 1.0
 
-n = sn.Functional('n', [t,x], 8*[100], 'tanh')
+n = sn.Functional('n', [t,x], 4*[100], 'tanh')
 
 '''
     kernel_initializer=glorot_uniform, 
@@ -89,17 +91,17 @@ n = sn.Functional('n', [t,x], 8*[100], 'tanh')
     bias_constraint=None)
 '''   
     
-L1 = diff(n, t) + (stretch - stretch_prev)*(L0/dt) * diff(n, x) - (1-n)*f(x,a) + n*g(x)
+L1 = diff(n, t) - (1.0-n)*f(x,a) + n*g(x)
 L1_cor = diff(n, t) + (stretch - stretch_prev)*(L0/dt) * diff(n, x) - gordon_correction(stretch,n)*f(x,a) + n*g(x)
-I1 = (1-sign(t - TOL)) *n
+I1 = (1-sign(t - TOL))*n
 
-model = sn.SciModel([t,x], [L1, I1], optimizer=optimizer, loss_func=loss)
+model = sn.SciModel([t,x], [L1, I1]) #, optimizer=optimizer, loss_func=loss)
 t_data, x_data = np.meshgrid( np.linspace(0, 2.0, 1000), np.linspace(-21.0, 63.0, 100) )
 
-h = model.train([t_data, x_data], 2*['zero'], learning_rate=1e-4, batch_size=512, epochs=30000)
+h = model.train([t_data, x_data], 2*['zero'], learning_rate=1e-3, batch_size=512, epochs=30000, stop_loss_value=1e-11)
 model.save_weights('../models/model.hdf5')
 
-t_test = np.array([0,0.001,0.002])
+t_test = np.array([0,0.001,0.002, 0.4])
 x_test = np.arange(-20.8,63,5.2)
 test_sample = np.meshgrid(t_test, x_test ) 
 prediction = n.eval(model,test_sample)
