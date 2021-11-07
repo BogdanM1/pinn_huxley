@@ -31,7 +31,7 @@ with tf.compat.v1.Session() as sess:
 		sess.graph.as_default()	        
 		g_in = tf.compat.v1.import_graph_def(graph_def)	        
 		tensor_input = sess.graph.get_tensor_by_name('import/dense_input:0')	        
-		tensor_output = sess.graph.get_tensor_by_name('import/dense_8/BiasAdd:0')	        
+		tensor_output = sess.graph.get_tensor_by_name('import/dense_4/BiasAdd:0')	        
 		predictions = sess.run(tensor_output, {tensor_input:test_sample})	        
 		original_stdout = sys.stdout	        
 		with open('../results/protobuf_output.csv', 'w') as f:	        
