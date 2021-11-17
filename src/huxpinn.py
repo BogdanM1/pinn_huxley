@@ -61,7 +61,7 @@ stretch_prev = 1.0
 a = 1.0
 
 n = sn.Functional('n', [x,t], 8*[20], 'tanh')    
-L1 = diff(n, t) - (1.0-n)*f_lin(x,a) + n*g(x)
+L1 = diff(n, t) - (1.0-n)*f(x,a) + n*g(x)
 #L1_cor = diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - gordon_correction(stretch,n)*f(x,a) + n*g(x)
 I1 = (t <= TOL )*n
 
