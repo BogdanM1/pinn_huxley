@@ -51,9 +51,10 @@ I2 = (1-sign(n))*n
 model = sn.SciModel([x,t,a,stretch,stretch_prev], [L1, I1, I2]) 
 
 nsamples = 1000000
+nzeros = 10000
 df = pd.DataFrame()
 df['x'] = np.random.choice(np.arange(-20.8,63,0.13), nsamples) 
-df['t'] = np.random.choice(np.linspace(0, 2.0, 1000), nsamples)
+df['t'] = np.append(np.random.choice(np.linspace(0, 2.0, 1000), nsamples-nzeros), np.zeros(nzeros))
 df['a'] = np.random.choice(np.linspace(0.0, 1.0, 1000), nsamples) 
 df['stretch'] = np.random.choice(np.linspace(1.25, .75, 1000), nsamples)
 df['stretch_prev'] = df['stretch'] + [random.uniform(-0.1,0.1) for i in range(nsamples)] 
