@@ -3,7 +3,6 @@ import random
 import pandas as pd 
 import sciann as sn
 from sciann.utils.math import diff, sign
-from print_predictions import print_predictions
 
 ''' fixed parameters ''' 
 TOL = 1e-2
@@ -43,42 +42,29 @@ a = sn.Variable('a')
 stretch = sn.Variable('stretch')
 stretch_prev = sn.Variable('stretch_prev')
 
-n = sn.Functional('n', [x,t], 8*[20], 'tanh')    
-L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - gordon_correction(stretch,n)*f(x,a) + n*g(x))* (1+sign(n)) * 0.5
+n = sn.Functional('n', [x,t,a,stretch,stretch_prev], 8*[40], 'tanh')    
+#L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - gordon_correction(stretch,n)*f(x,a) + n*g(x))* (1+sign(n)) * 0.5
+L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - (1-n)*f(x,a) + n*g(x))* (1+sign(n)) * 0.5
 I1 = (t < TOL )*n
 I2 = (1-sign(n))*n
 
 model = sn.SciModel([x,t,a,stretch,stretch_prev], [L1, I1, I2]) 
 
-nsamples = 1000000
-nzeros = 10000
-df = pd.DataFrame()
-df['x'] = np.random.choice(np.arange(-20.8,63,0.13), nsamples) 
-df['t'] = np.append(np.random.choice(np.linspace(0, 2.0, 1000), nsamples-nzeros), np.zeros(nzeros))
-df['a'] = np.random.choice(np.linspace(0.0, 1.0, 1000), nsamples) 
-df['stretch'] = np.random.choice(np.linspace(1.25, .75, 1000), nsamples)
-df['stretch_prev'] = df['stretch'] + [random.uniform(-0.1,0.1) for i in range(nsamples)] 
-df = df.drop_duplicates()
-df.to_csv("../data/input_data.csv", index = False)
 
-x_train = np.array(df['x']) 
-t_train = np.array(df['t']) 
-a_train = np.array(df['a'])
+df = pd.read_csv('../data/dataMexie.csv')
+df = df[['activation','stretch','stretch_prev']]
+nsamples = len(df)
+nzeros = 17*int(nsamples/100)
+x_train = np.append(np.random.choice(np.arange(-20.8,62.4,0.52), nsamples-nzeros), np.linspace(-20.8,62.4,nzeros))  
+t_train = np.append(np.random.choice(np.linspace(0, 2.0, 200), nsamples-nzeros), np.zeros(nzeros))
+a_train = np.array(df['activation'])
 stretch_train = np.array(df['stretch'])
-stretch_prev_train =  np.array(df['stretch_prev'])  
+stretch_prev_train =  np.array(df['stretch_prev']) 
+df['x'] = x_train
+df['t'] = t_train 
+df.to_csv("../data/input_data.csv", index = False)
+  
 
 h = model.train([x_train, t_train, a_train, stretch_train, stretch_prev_train], 3*['zero'], learning_rate=1e-4, batch_size=512, epochs=10000,
                  stop_loss_value=1e-9, adaptive_weights={'method':'NTK', 'freq':500})
 model.save_weights('../models/model.hdf5')
-
-
-x_test = np.arange(-20.8,63,5.2)
-t_test = np.array([0,0.001,0.002, 0.4])
-a_test = np.array([1.0])
-stretch_test = np.array([1.0])
-stretch_prev_test = np.array([1.0])
-test_sample = np.meshgrid(x_test, t_test, a_test, stretch_test, stretch_prev_test) 
-prediction = n.eval(model,test_sample)
-print_predictions(prediction, x_test, t_test, '../results/test.csv')
-
-    

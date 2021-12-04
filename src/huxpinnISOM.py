@@ -1,5 +1,4 @@
 import numpy as np
-import sys 
 import pandas as pd 
 import sciann as sn
 from sciann.utils.math import diff, sign
@@ -57,17 +56,5 @@ h = model.train([x_train, t_train], 3*['zero'], learning_rate=1e-4, batch_size=5
 model.save_weights('../models/model.hdf5')
 
 
-x_test = np.arange(-20.8,63,5.2)
-t_test = np.array([0,0.001,0.002, 0.4])
-test_sample = np.meshgrid(x_test, t_test) 
-prediction = n.eval(model,test_sample)
 
-original_stdout = sys.stdout 
-with open('../results/test.csv', 'w') as f:
-  sys.stdout = f
-  print('t,x,n')
-  for tind in range(len(t_test)):
-    for xind in range(len(x_test)):
-      print(t_test[tind],',',x_test[xind],',',prediction[tind][xind])
-  sys.stdout = original_stdout
     

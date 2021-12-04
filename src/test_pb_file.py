@@ -1,27 +1,19 @@
 import numpy as np 
-import sys
+import pandas as pd
 import tensorflow as tf
 from tensorflow.python.platform import gfile
 from tensorflow.keras.models import  Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras import backend as K
 
-x_test = np.arange(-20.8,63,5.2)
-t_test = np.array([0,0.001,0.002, 0.4])
-
-test_sample = []
-for t_val in t_test:
-  for x_val in x_test: 
-    test_sample += [[x_val,t_val]]
-
-
-def print_predictions(predictions):
-    print('t,x,n')
-    index = 0
-    for t_val in t_test:
-      for x_val in x_test: 
-        print(t_val,',',x_val,',',predictions[index][0]) 
-        index += 1   
+df = pd.read_csv('../data/original-shortening.csv')
+df = df.iloc[:, :-1]
+'''
+df['a'] = np.ones(len(df))
+df['stretch'] = np.ones(len(df))
+df['stretch_prev'] = np.ones(len(df))
+'''
+test_sample = df.to_numpy()
 
 with tf.compat.v1.Session() as sess:	    
 	with gfile.FastGFile('../models/model.pb', 'rb') as f:	        
@@ -32,26 +24,17 @@ with tf.compat.v1.Session() as sess:
 		tensor_input = sess.graph.get_tensor_by_name('import/dense_input:0')	        
 		tensor_output = sess.graph.get_tensor_by_name('import/dense_8/BiasAdd:0')	        
 		predictions = sess.run(tensor_output, {tensor_input:test_sample})	        
-		original_stdout = sys.stdout	        
-		with open('../results/protobuf_output.csv', 'w') as f:	        
-		  sys.stdout = f	        
-		  print_predictions(predictions)	        
-		  sys.stdout = original_stdout             
-		   
-
+		df['pb_prediction'] = predictions[:,0]	                    	   
 
 model_path    = '../models/model.hdf5'
 model = Sequential()
-model.add(Dense(20, input_dim = 2, activation='tanh'))
+model.add(Dense(40, input_dim = 5, activation='tanh'))
 for i in range(7):
-  model.add(Dense(20, activation='tanh'))
+  model.add(Dense(40, activation='tanh'))
 model.add(Dense(1))
 model.load_weights(model_path)
 model.compile(loss='mse', optimizer='adam')
 output = model.predict(test_sample)
-original_stdout = sys.stdout 
-with open('../results/h5_output.csv', 'w') as f:
-  sys.stdout = f 
-  print_predictions(output) 
-  sys.stdout = original_stdout
+df['hdf5_prediction'] = output[:,0]
+df.to_csv('../results/prediction.csv', index=False)
 
