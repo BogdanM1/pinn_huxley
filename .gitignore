@@ -1,3 +1,5 @@
 src/pinn.0
-data/input_data.csv
+data/*
 gitoken
+*.zip
+results/*

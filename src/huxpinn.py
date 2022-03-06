@@ -1,20 +1,22 @@
 import numpy as np
-import random  
+import random
+import tensorflow as tf
 import pandas as pd 
 import sciann as sn
 from sciann.utils.math import diff, sign
 
 ''' fixed parameters ''' 
-TOL = 1e-2
+TOL = 1e-4
 f1_0 = 43.3 
 h = 15.6
 g1 = 10.0
-g2 = 209.0
-fzah = 4.0
+g2 = 208.0
+fzah = 1.0
 L0 = 1100.0
 dt = 1e-3
 grdstretch = [0.6, 0.8, 0.95, 1.0, 1.64, 5.0]
 grdstress = [0.0, 0.782, 1.0, 1.0, 0.0, 0.0]
+LFACTOR = 0.1
 ''' fixed parameters '''
 
 def lininterp(x, x0, x1, y0, y1):
@@ -42,29 +44,32 @@ a = sn.Variable('a')
 stretch = sn.Variable('stretch')
 stretch_prev = sn.Variable('stretch_prev')
 
-n = sn.Functional('n', [x,t,a,stretch,stretch_prev], 8*[40], 'tanh')    
-#L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - gordon_correction(stretch,n)*f(x,a) + n*g(x))* (1+sign(n)) * 0.5
-L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - (1-n)*f(x,a) + n*g(x))* (1+sign(n)) * 0.5
+n = sn.Functional('n', [x,t,a,stretch,stretch_prev], 8*[400], 'tanh')    
+L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - gordon_correction(stretch,n)*f(x,a) + n*g(x))*(1+sign(n)) * 0.5 
+#L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - (1-n)*f(x,a) + n*g(x))* (1+sign(n)) * 0.5 
 I1 = (t < TOL )*n
 I2 = (1-sign(n))*n
+D1 = sn.Data(n)
 
-model = sn.SciModel([x,t,a,stretch,stretch_prev], [L1, I1, I2]) 
+model = sn.SciModel([x,t,a,stretch,stretch_prev], [L1*LFACTOR, I1, I2, D1])  #load_weights_from='../models/isom-best_model-best.hdf5'
 
 
-df = pd.read_csv('../data/dataMexie.csv')
-df = df[['activation','stretch','stretch_prev']]
-nsamples = len(df)
-nzeros = 17*int(nsamples/100)
-x_train = np.append(np.random.choice(np.arange(-20.8,62.4,0.52), nsamples-nzeros), np.linspace(-20.8,62.4,nzeros))  
-t_train = np.append(np.random.choice(np.linspace(0, 2.0, 200), nsamples-nzeros), np.zeros(nzeros))
+df = pd.read_csv('../data/pinn_data1.csv')
+x_train = np.array(df['x'])
+t_train = np.array(df['t'])
 a_train = np.array(df['activation'])
 stretch_train = np.array(df['stretch'])
-stretch_prev_train =  np.array(df['stretch_prev']) 
-df['x'] = x_train
-df['t'] = t_train 
-df.to_csv("../data/input_data.csv", index = False)
-  
+stretch_prev_train = np.array(df['stretch_prev'])
+n_train = np.array(df['n'])  
 
-h = model.train([x_train, t_train, a_train, stretch_train, stretch_prev_train], 3*['zero'], learning_rate=1e-4, batch_size=512, epochs=10000,
-                 stop_loss_value=1e-9, adaptive_weights={'method':'NTK', 'freq':500})
-model.save_weights('../models/model.hdf5')
+nzeros = 10000
+t_train = np.append(t_train, np.zeros(nzeros))
+n_train = np.append(n_train, np.zeros(nzeros))
+
+x_train = np.append(x_train, np.random.choice(x_train, size=nzeros, replace=False))
+a_train = np.append(a_train, np.zeros(nzeros))
+stretch_train = np.append(stretch_train, np.ones(nzeros))
+stretch_prev_train = np.append(stretch_prev_train, np.ones(nzeros))
+
+
+h = model.train([x_train, t_train, a_train, stretch_train, stretch_prev_train], ['zeros','zeros', 'zeros', n_train], learning_rate=1e-4, batch_size=4096, epochs=15000, verbose=2, save_weights = {'path':'../models/best_model', 'best':True,'freq':1}, log_loss_gradients={'path':'../results/logs','freq':2000}, adaptive_weights={'method':'NTK', 'freq':100})

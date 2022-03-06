@@ -34,11 +34,11 @@ def freeze_session(session, keep_var_names=None, output_names=None, clear_device
             session, input_graph_def, output_names, freeze_var_names)
         return frozen_graph
 
-model_path    = '../models/model.hdf5'
+model_path    = '../models/best_model-best.hdf5'
 model = Sequential()
-model.add(Dense(40, input_dim = 5, activation='tanh'))
+model.add(Dense(400, input_dim = 5, activation='tanh'))
 for i in range(7):
-  model.add(Dense(40, activation='tanh'))
+  model.add(Dense(400, activation='tanh'))
 model.add(Dense(1))
 model.load_weights(model_path)
 model.compile(loss='mse', optimizer='adam')    

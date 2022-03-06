@@ -18,7 +18,7 @@ vector<float> huxpinn_output_values;
 double huxpinn_Kxb, huxpinn_xstart, huxpinn_xend, huxpinn_L0, huxpinn_A, huxpinn_xstep;
 int huxpinn_xdiv;
 
-int huxpinn_nfeatures = 2;
+int huxpinn_nfeatures = 5;
 
 void huxpinn_init(int* n_qpoints, double*Kxb, double*xstart, double*xend, int *xdiv, 
 				  double*L0, double *A, char* model_path)
@@ -43,6 +43,9 @@ void huxpinn_init(int* n_qpoints, double*Kxb, double*xstart, double*xend, int *x
 		{
 			huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures] = huxpinn_xstart + ix*huxpinn_xstep;
 			huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 1] = 0.0;
+      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 2] = 0.0;
+      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 3] = 1.0;
+      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 4] = 1.0;
 		}
 			
 	}
@@ -69,12 +72,15 @@ void huxpinn_init(int* n_qpoints, double*Kxb, double*xstart, double*xend, int *x
 
 }
 
-void huxpinn_set_values(int * qindex, double* stretch, double* time)
+void huxpinn_set_values(int * qindex, double *time, double* activation, double* stretch, double *stretch_prev)
 {
 	int qindex_start = (* qindex)*(huxpinn_nfeatures*huxpinn_xdiv);
 	for(int ix = 0; ix < huxpinn_xdiv; ix++)
 	{
 		huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 1] = *time;
+   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 2] = *activation;
+   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 3] = *stretch;
+   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 4] = *stretch_prev;
 	}	
 }
 
@@ -152,20 +158,32 @@ int main()
 {
 	int nqp = 1, iqp = 0;
 	double stretch = 1.0;
+  double stretch_prev = 1.0;
+  double activation = 1.0;
 	double time;
 	double stress, dstress;
+ 
+  double sim_duration = .4;
+	double dt = 0.001; 
+  double stretch_start = 1.0, stretch_end=0.75;
+  double stretch_delta = (stretch_end - stretch_start)/(sim_duration/dt);
+
 	/** params */
 	double Kxb = 0.58, A = 130.0, L0 = 1100.0, xstart = -20.8, xend = 62.4;
 	int xdiv = 16; 
 	/***********/
 	
 	huxpinn_init(&nqp, &Kxb, &xstart, &xend, &xdiv, &L0, &A);              
-	for(time = 0; time < .401; time +=0.001)
+	while (abs(time - sim_duration) > 1e-6)
 	{
-		huxpinn_set_values(&iqp,&stretch,&time);
+		time = time + dt;
+		huxpinn_set_values(&iqp,&time,&activation,&stretch,&stretch_prev);
 		huxpinn_predict();
 		huxpinn_get_values(&iqp,&stress,&dstress);	
-   		printf("%lf,%lf,%lf\n",time,stress,dstress);
+		printf("%lf,%lf,%lf,%lf\n",time,stretch,stress,dstress);
+      
+    stretch_prev = stretch;
+    stretch +=stretch_delta;
 	}
 	huxpinn_destroy();
 }
