@@ -17,15 +17,15 @@ with tf.compat.v1.Session() as sess:
 
 model_path    = '../models/best_model-best.hdf5'
 model = Sequential()
-model.add(Dense(400, input_dim = 5, activation='tanh'))
+model.add(Dense(200, input_dim = 5, activation='tanh'))
 for i in range(7):
-  model.add(Dense(400, activation='tanh'))
+  model.add(Dense(200, activation='tanh'))
 model.add(Dense(1))
 model.load_weights(model_path)
 model.compile(loss='mse', optimizer='adam')
 
 
-df = pd.read_csv('../data/experiments/experiment11.csv')
+df = pd.read_csv('../data/experiments/experiment16.csv')
 df = df.iloc[:, :-1]
 test_sample = df.to_numpy()
 with tf.compat.v1.Session() as sess:
@@ -33,7 +33,7 @@ with tf.compat.v1.Session() as sess:
 df['pb_prediction'] = predictions[:,0]
 output = model.predict(test_sample)
 df['hdf5_prediction'] = output[:,0]
-df.to_csv('../results/prediction-experiment11.csv', index=False)
+df.to_csv('../results/prediction-experiment16.csv', index=False)
 
 
 df = pd.read_csv('../data/experiments/experiment10.csv')

@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd 
 import sciann as sn
 from sciann.utils.math import diff, sign
+import tensorflow as tf
+import tensorflow_addons as tfa
 
 ''' fixed parameters ''' 
 TOL = 1e-2
@@ -47,7 +49,10 @@ L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - gordon_correcti
 I1 = (t < TOL )*n
 I2 = (1-sign(n))*n
 
-model = sn.SciModel([x,t,a,stretch,stretch_prev], [L1, I1, I2]) 
+
+#optimizer=tfa.optimizers.RectifiedAdam(lr=1e-3, beta_1=0.99, beta_2=0.9999, clipnorm=1.0)
+#loss = tf.keras.losses.Huber(0.5)
+model = sn.SciModel([x,t,a,stretch,stretch_prev], [L1, I1, I2]) #, loss_func=loss, optimizer=optimizer) 
 
 
 x_train = np.arange(-20.8,63,2.6)
