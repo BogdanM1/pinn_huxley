@@ -33,6 +33,7 @@ def g(x):
     return ((x < .0)*g2 + 
             (x >= .0 and x <= h)*(g1*x/h) + 
             (x > h)*(fzah*g1*x/h))
+                       
       
 
 x = sn.Variable('x')

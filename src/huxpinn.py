@@ -18,7 +18,6 @@ L0 = 1100.0
 dt = 1e-3
 grdstretch = [0.6, 0.8, 0.95, 1.0, 1.64, 5.0]
 grdstress = [0.0, 0.782, 1.0, 1.0, 0.0, 0.0]
-LFACTOR = .1
 ''' fixed parameters '''
 
 def lininterp(x, x0, x1, y0, y1):
@@ -28,7 +27,8 @@ def gordon_correction(stretch, n):
     cor = ( (stretch >= grdstretch[0] and stretch < grdstretch[1])*lininterp(stretch, grdstretch[0],grdstretch[1], grdstress[0],grdstress[1]) 
         +   (stretch >= grdstretch[1] and stretch < grdstretch[2])*lininterp(stretch, grdstretch[1],grdstretch[2], grdstress[1],grdstress[2])
         +   (stretch >= grdstretch[2] and stretch < grdstretch[3])*lininterp(stretch, grdstretch[2],grdstretch[3], grdstress[2],grdstress[3])
-        +   (stretch >= grdstretch[3] and stretch < grdstretch[4])*lininterp(stretch, grdstretch[3],grdstretch[4], grdstress[3],grdstress[4]))
+        +   (stretch >= grdstretch[3] and stretch < grdstretch[4])*lininterp(stretch, grdstretch[3],grdstretch[4], grdstress[3],grdstress[4])
+        +   (stretch >= grdstretch[4] and stretch < grdstretch[5])*lininterp(stretch, grdstretch[4],grdstretch[5], grdstress[4],grdstress[5]))
     return (cor > n)*(cor - n)
 
 def f(x,a):
@@ -46,14 +46,14 @@ a = sn.Variable('a')
 stretch = sn.Variable('stretch')
 stretch_prev = sn.Variable('stretch_prev')
 
-n = sn.Functional('n', [x,t,a,stretch,stretch_prev], 8*[200], 'tanh')    
+n = sn.Functional('n', [x,t,a,stretch,stretch_prev], 8*[192], 'tanh')    
 L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - gordon_correction(stretch,n)*f(x,a) + n*g(x))*(1+sign(n)) * 0.5 
 #L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - (1-n)*f(x,a) + n*g(x))* (1+sign(n)) * 0.5 
 I1 = (t < TOL )*n
 I2 = (1-sign(n))*n
 D1 = sn.Data(n)
 
-model = sn.SciModel([x,t,a,stretch,stretch_prev], [L1*LFACTOR, I1, I2, D1])  #load_weights_from='../models/isom-best_model-best.hdf5'
+model = sn.SciModel([x,t,a,stretch,stretch_prev], [1e-6*L1, 10.0*I1, I2, D1])  #load_weights_from='../models/isom-best_model-best.hdf5'
 
 
 df = pd.read_csv('../data/pinn_data_train.csv')
@@ -74,10 +74,10 @@ stretch_train = np.append(stretch_train, np.random.choice(stretch_train, size=nz
 stretch_prev_train = np.append(stretch_prev_train, np.random.choice(stretch_prev_train, size=nzeros, replace=False))
 
 
-sample_weights =np.array([1 if (x>1e-10) else 100 for x in n_train])
-h = model.train([x_train, t_train, a_train, stretch_train, stretch_prev_train], ['zeros', 'zeros', 'zeros', n_train], weights=sample_weights,
-                 learning_rate=1e-4, batch_size=8192, epochs=30000, verbose=2,
-                 save_weights = {'path':'../models/best_model', 'best':True,'freq':1}, 
-                 log_loss_gradients={'path':'../results/logs','freq':2000},
-                 adaptive_weights={'method':'NTK', 'freq':100})
+sample_weights =np.array([1.0 if (xx>1e-10) else 100 for xx in n_train])
+h = model.train([x_train, t_train, a_train, stretch_train, stretch_prev_train], ['zeros', 'zeros', 'zeros', n_train], 
+                 weights=sample_weights, 
+                 learning_rate=1e-4, batch_size=16384, epochs=30000, verbose=2,
+                 save_weights = {'path':'../models/best_model', 'best':True,'freq':1},
+                 adaptive_weights={'method':'NTK', 'freq':150})
 
