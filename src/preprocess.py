@@ -4,7 +4,7 @@ import itertools
 
 col_names = ['x','t','activation','stretch','stretch_prev','n']
 ntrains = 1
-ntraine = 61
+ntraine = 11
 
 for i in range(ntrains,ntraine,1):
 	df = pd.read_csv('../data/experiments/experiment'+str(i)+'.csv', names=col_names)
