@@ -1,3 +1,1 @@
-/home/bogdan/pinn_huxley/src/pinn-c-isom/build/CMakeFiles/rebuild_cache.dir
 /home/bogdan/pinn_huxley/src/pinn-c-isom/build/CMakeFiles/huxpinn.dir
-/home/bogdan/pinn_huxley/src/pinn-c-isom/build/CMakeFiles/edit_cache.dir

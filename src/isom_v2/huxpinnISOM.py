@@ -2,11 +2,9 @@ import numpy as np
 import pandas as pd 
 import sciann as sn
 from sciann.utils.math import diff, sign
-import tensorflow as tf
-import tensorflow_addons as tfa
 
 ''' fixed parameters ''' 
-TOL = 1e-2
+TOL = 1e-4
 f1_0 = 43.3 
 h = 15.6
 g1 = 10.0
@@ -43,20 +41,18 @@ a = sn.Variable('a')
 stretch = sn.Variable('stretch')
 stretch_prev = sn.Variable('stretch_prev')
 
-n = sn.Functional('n', [x,t,a,stretch,stretch_prev], 8*[100], 'tanh')       
-L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - gordon_correction(stretch,n)*f(x,a) + n*g(x))*(1+sign(n)) * 0.5 
-#L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - (1-n)*f(x,a) + n*g(x))* (1+sign(n)) * 0.5 
+n = sn.Functional('n', [x,t,a,stretch,stretch_prev], 8*[20], 'tanh')       
+#L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - gordon_correction(stretch,n)*f(x,a) + n*g(x))*(1+sign(n)) * 0.5 
+L1 = (diff(n, t) - (1.0 - n)*f(x,1.0) + n*g(x))*(1+sign(n)) * 0.5 
 I1 = (t < TOL )*n
 I2 = (1-sign(n))*n
 
 
-#optimizer=tfa.optimizers.RectifiedAdam(lr=1e-3, beta_1=0.99, beta_2=0.9999, clipnorm=1.0)
-#loss = tf.keras.losses.Huber(0.5)
-model = sn.SciModel([x,t,a,stretch,stretch_prev], [L1, I1, I2]) #, loss_func=loss, optimizer=optimizer) 
+model = sn.SciModel([x,t,a,stretch,stretch_prev], [L1, I1, I2])
 
 
-x_train = np.arange(-20.8,63,2.6)
-t_train = np.linspace(0, 1.0, 100)
+x_train = np.arange(-20.8,63, 0.65)
+t_train = np.linspace(0, .5, 600)
 
 stretch_train = np.array([1.0])
 stretch_prev_train = stretch_train
@@ -64,12 +60,8 @@ activation_train = stretch_train
 
 
 x_train, t_train, activation_train, stretch_train, stretch_prev_train = np.meshgrid( x_train, t_train, activation_train, stretch_train, stretch_prev_train )
-
-
-
-h = model.train([x_train, t_train, activation_train, stretch_train, stretch_prev_train], ['zeros','zeros', 'zeros'], learning_rate=1e-4, batch_size=512, epochs=25000,
-                adaptive_weights={'method':'NTK', 'freq':100}, verbose=2, 
-                 save_weights = {'path':'../../models/isom-best_model', 'best':True,'freq':1})
+h = model.train([x_train, t_train, activation_train, stretch_train, stretch_prev_train], ['zeros','zeros', 'zeros'], learning_rate=1e-4, batch_size=512, epochs=10000,
+                verbose=2, save_weights = {'path':'../../models/isom-best_model', 'best':True,'freq':1}, adaptive_weights={'method':'NTK', 'freq':300})
                  
 
 

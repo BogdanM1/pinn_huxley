@@ -4,9 +4,9 @@ import itertools
 
 col_names = ['x','t','activation','stretch','stretch_prev','n']
 ntrains = 1
-ntraine = 160
+ntraine = 11
 
-for i in itertools.chain(np.setdiff1d(range(ntrains,ntraine),range(ntrains+3,ntraine,4))):
+for i in range(ntrains,ntraine,1):
 	df = pd.read_csv('../data/experiments/experiment'+str(i)+'.csv', names=col_names)
 	df = df.drop_duplicates()
 	if(i==1):

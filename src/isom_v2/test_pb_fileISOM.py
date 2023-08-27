@@ -17,9 +17,9 @@ with tf.compat.v1.Session() as sess:
 
 model_path    = '../../models/isom-best_model-best.hdf5'
 model = Sequential()
-model.add(Dense(100, input_dim = 5, activation='tanh'))
+model.add(Dense(20, input_dim = 5, activation='tanh'))
 for i in range(7):
-  model.add(Dense(100, activation='tanh'))
+  model.add(Dense(20, activation='tanh'))
 model.add(Dense(1))
 model.load_weights(model_path)
 model.compile(loss='mse', optimizer='adam')

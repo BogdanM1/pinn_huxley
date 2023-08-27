@@ -36,14 +36,14 @@ def freeze_session(session, keep_var_names=None, output_names=None, clear_device
 
 model_path    = '../../models/isom-best_model-best.hdf5'
 model = Sequential()
-model.add(Dense(100, input_dim = 5, activation='tanh'))
+model.add(Dense(20, input_dim = 5, activation='tanh'))
 for i in range(7):
-  model.add(Dense(100, activation='tanh'))
+  model.add(Dense(20, activation='tanh'))
 model.add(Dense(1))
 model.load_weights(model_path)
 model.compile(loss='mse', optimizer='adam')    
 model.summary()  
 
 frozen_graph = freeze_session(tf.compat.v1.keras.backend.get_session(), output_names=[out.op.name for out in model.outputs])
-tf.io.write_graph(frozen_graph, "../../models/", "model.pb", as_text = False)
+tf.io.write_graph(frozen_graph, "../../models/", "model-isom.pb", as_text = False)
 [print(n.name) for n in frozen_graph.node]

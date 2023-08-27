@@ -4,7 +4,7 @@ import sciann as sn
 from sciann.utils.math import diff, sign
 
 ''' fixed parameters ''' 
-TOL = 1e-2
+TOL = 1e-4
 f1_0 = 43.3 
 h = 15.6
 g1 = 10.0
@@ -46,15 +46,14 @@ I2 = (1-sign(n))*n
 model = sn.SciModel([x,t], [L1, I1, I2]) 
 
 
-x_train = np.arange(-20.8,63,2.6)
-t_train = np.linspace(0, 1.0, 500)
+x_train = np.arange(-20.8,63,0.65)
+t_train = np.linspace(0, .5, 500)
 
 x_train, t_train = np.meshgrid( x_train, t_train )
 
-h = model.train([x_train, t_train], ['zeros','zeros', 'zeros'], learning_rate=1e-4, batch_size=512, epochs=15000,
-                 stop_loss_value=1e-9, adaptive_weights={'method':'NTK', 'freq':500}, verbose=2, save_weights = {'path':'../models/isom-best_model', 'best':True,'freq':1})
+h = model.train([x_train, t_train], ['zeros','zeros', 'zeros'], learning_rate=1e-4, batch_size=512, epochs=10000,
+                 stop_loss_value=1e-9, adaptive_weights={'method':'NTK', 'freq':300}, verbose=2, save_weights = {'path':'../../models/isom-best_model', 'best':True,'freq':1})
                  
-model.save_weights('../models/isom-model.hdf5')
 
 
 

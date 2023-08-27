@@ -5,6 +5,11 @@ tf.disable_v2_behavior()
 from tensorflow.keras import backend as K
 from tensorflow.keras.models import  Sequential
 from tensorflow.keras.layers import Dense
+import sys
+
+nlayers = int(sys.argv[1])
+nneurons = int(sys.argv[2])
+nfeatures = int(sys.argv[3])
 
 def freeze_session(session, keep_var_names=None, output_names=None, clear_devices=True):
     """
@@ -36,9 +41,9 @@ def freeze_session(session, keep_var_names=None, output_names=None, clear_device
 
 model_path    = '../models/best_model-best.hdf5'
 model = Sequential()
-model.add(Dense(200, input_dim = 5, activation='tanh'))
-for i in range(7):
-  model.add(Dense(200, activation='tanh'))
+model.add(Dense(nneurons, input_dim = nfeatures, activation='tanh'))
+for i in range(nlayers-1):
+  model.add(Dense(nneurons, activation='tanh'))
 model.add(Dense(1))
 model.load_weights(model_path)
 model.compile(loss='mse', optimizer='adam')    
