@@ -1,5 +1,6 @@
 import deepxde as dde
 import numpy as np
+import pandas as pd
 import tensorflow as tf
 import os
 
@@ -9,6 +10,9 @@ from tensorflow.keras.layers import Dense
 
 dde.config.set_random_seed(100)
 os.system("rm ../models/*")
+
+''' hyperparameters '''
+nfeatures=2
 
 ''' fixed parameters ''' 
 f1_0 = 43.3 
@@ -43,35 +47,43 @@ def g(x):
            0.25 * (1+tf.sign(x)) * (1-tf.sign(x-h)) * (g1*x/h) + 
            0.5 * (1+tf.sign(x-h)) * (fzah*g1*x/h))
 
-# n = n(x,t,a,l,lp)
+# n = n(x,a,l,lp,t)
 def pde(xx, n):
     dn_dt = dde.grad.jacobian(n, xx, i=0, j=1)
     dn_dx = dde.grad.jacobian(n, xx, i=0, j=0)
-    # loss = dn_dt + L0/dt*(xx[:,3:4] - xx[:,5:6])*dn_dx - (1.0-n) * f(xx[:,0:1], xx[:,2:3]) + n*g(xx[:,0:1])
-    #loss = dn_dt + L0/dt*(xx[:,3:4] - xx[:,5:6])*dn_dx - gordon_correction(xx[:,3:4],n) * f(xx[:,0:1], xx[:,2:3]) + n*g(xx[:,0:1])
-    loss = dn_dt  - (1.0-n) * f(xx[:,0:1], 1.0) + n*g(xx[:,0:1])
+    #loss = dn_dt + L0/dt*(xx[:,2:3] - xx[:,3:4])*dn_dx - gordon_correction(xx[:,2:3],n) * f(xx[:,0:1], xx[:,1:2]) + n*g(xx[:,0:1])
+    loss = dn_dt  - 0.0002*(L0/dt) * dn_dx - (1.0-n) * f(xx[:,0:1], 1.) + n*g(xx[:,0:1])
     return loss + n*(1-tf.sign(n))
     
-def boundary(x, _):
-    return dde.utils.isclose(x[1], 0) 
- 
-def func(x):
-    return 0.0  
   
-geom = dde.geometry.geometry_nd.Hypercube([-2.08, .0],[63., .4])
-ic1 = dde.icbc.DirichletBC(geom, func, boundary)
-data = dde.data.PDE(geom, pde, [ic1], num_domain=50000, num_boundary=1000)
-net = dde.nn.FNN([2] + [40] * 4 + [1], "tanh", "Glorot normal")
+geom = dde.geometry.geometry_nd.Hypercube([-20.8],[63.])
+timedomain = dde.geometry.TimeDomain(0, .05)
+geomtime = dde.geometry.GeometryXTime(geom, timedomain)
+
+ic1 = dde.icbc.IC(geomtime, lambda x: 0.0, lambda _, on_initial: on_initial)
+data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=10000, num_initial=1000)
+net = dde.nn.FNN([2] + [40] * 3 + [1], "sigmoid", "Glorot normal")
+#net = dde.nn.MsFFN([2] + [40] * 3 + [1], "sigmoid", "Glorot normal", sigmas=[1, 10])
 model = dde.Model(data, net)
 
-model.compile("adam", lr=1e-3, loss_weights=[1.e-1, 1])
-model.train(150000)
-model.compile("L-BFGS", loss_weights=[1.e-1, 1])
+model.compile("adam", lr=1e-2, loss_weights=[1.e-1, 1])
+losshistory, train_state = model.train(100000)
+model.compile("L-BFGS", loss_weights=[1.e-0, 1])
 losshistory, train_state = model.train()
 #dde.saveplot(losshistory, train_state, issave=True, isplot=True)
 
 model.save("../models/tmpmodel")
 #print(model.predict(np.array([[14, .1, 1., 1., .4]])))
-os.system("python3 convert_ckpt_to_pb.py "+ str(train_state.step))
-os.system("python3 test_pb_file.py")
+#os.system("python3 convert_ckpt_to_pb.py "+ str(train_state.step)+ " dense_3/BiasAdd")
+#os.system("python3 test_pb_file.py "+ str(nfeatures))
 
+df = pd.read_csv('../data/input.csv')
+input_n = df['n']
+df_in = df.iloc[:, :nfeatures]
+test_sample = df_in.to_numpy()
+predictions = model.predict(test_sample)
+df['pb_prediction'] = predictions[:,0]
+df.to_csv('../results/prediction.csv', index=False)
+# Calculate the correlation coefficient
+correlation_coefficient = input_n.corr(df['pb_prediction'])
+print("Correlation Coefficient:", correlation_coefficient)

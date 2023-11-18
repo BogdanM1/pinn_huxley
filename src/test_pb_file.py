@@ -25,7 +25,7 @@ with tf.compat.v1.Session() as sess:
 		tensor_input = sess.graph.get_tensor_by_name('import/'+inputnodename+':0')	        
 		tensor_output = sess.graph.get_tensor_by_name('import/'+outputnodename+':0')	        	                    	   
 
-df = pd.read_csv('../data/input_iso.csv')
+df = pd.read_csv('../data/input_fix.csv')
 input_n = df['n']
 
 df_in = df.iloc[:, :nfeatures]

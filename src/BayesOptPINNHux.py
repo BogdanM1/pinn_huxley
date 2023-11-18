@@ -17,13 +17,13 @@ from skopt.plots import plot_convergence, plot_evaluations, plot_objective
 optimize_both_objectives = True
 use_labels = False
 nfeatures = 2
-n_iterations = 100
-nepochs = 100
-nntk = 30  
-nlaymin = 1
+n_iterations = 20
+nepochs = 30
+nntk = 500  
+nlaymin = 4
 nneuronsmin = 10
 nlaymax = 10
-nneuronsmax = 100
+nneuronsmax = 40
 
 ''' fixed Huxley parameters ''' 
 TOL = 1e-3
@@ -43,6 +43,12 @@ evaluations_plot_path = "../results/evaluations_plot.png"
 objective1_plot_path = "../results/objective1_plot.png"
 objective2_plot_path = "../results/objective2_plot.png"
 convergence_plot_path = "../results/convergence_plot.png"
+
+def nn_size(nlay,nneu):
+    return (1.0*(nlay*nlay+3)*nneu)
+
+def nn_size_rel(nlay, nneu):
+    return (1.0*nn_size(nlay,nneu)/nn_size(nlaymax,nneuronsmax))
 
 def lininterp(x, x0, x1, y0, y1):
   return (y0 + (x-x0)*(y1 - y0)/(x1 - x0))
@@ -98,15 +104,13 @@ else:
 def objective(params):
     nlayers = int(params[0])
     nneurons = int(params[1])
-    activation = params[2]
-    learning_rate = params[3]
   
     if(nfeatures==2):
       features = [x,t]
     else: 
       features = [x,t,a,stretch, stretch_prev]
 
-    n = sn.Functional('n', features, nlayers*[nneurons], activation)    
+    n = sn.Functional('n', features, nlayers*[nneurons], 'tanh')    
 
     L1 = (diff(n, t) + (stretch-stretch_prev)*(L0/dt) * diff(n, x) - (1-n)*f(x,a) + n*g(x))* (1+sign(n)) * 0.5 
     I1 = (t < TOL )*n
@@ -123,22 +127,19 @@ def objective(params):
 
     # Train the model with the specified learning rate and obtain the final loss
     history = model.train([x_train, t_train, a_train, stretch_train, stretch_prev_train], target, 
-                          learning_rate=learning_rate, batch_size=512, epochs=nepochs, verbose=2,
+                          learning_rate=1e-4, batch_size=512, epochs=nepochs, verbose=2,
                           adaptive_weights={'method': 'NTK', 'freq': nntk})
 
-    final_loss = history.history['loss'][-1]
+    final_loss = min(history.history['loss'])
     
     # Calculate the size of the neural network
-    nn_size = nlayers * nneurons
     if(optimize_both_objectives):
-      return final_loss*100.0 + nn_size/(nlaymax*nneuronsmax)
+      return final_loss*100.0 + nn_size_rel(nlayers, nneurons)
     return final_loss
 
 # Create the optimizer
 dimensions = [(nlaymin, nlaymax),     # Number of layers
-              (nneuronsmin, nneuronsmax),   # Number of neurons
-              ('relu', 'tanh', 'sigmoid','selu'),  # Activation function
-              (1e-6, 1e-2, 'log-uniform')]  # Learning rate
+              (nneuronsmin, nneuronsmax)]  # Number of neurons
 
 
 results = gp_minimize(func=objective,
