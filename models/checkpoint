@@ -1,2 +1,2 @@
-model_checkpoint_path: "tmpmodel-100605.ckpt"
-all_model_checkpoint_paths: "tmpmodel-100605.ckpt"
+model_checkpoint_path: "tmpmodel-100187.ckpt"
+all_model_checkpoint_paths: "tmpmodel-100187.ckpt"

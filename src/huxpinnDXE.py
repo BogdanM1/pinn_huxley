@@ -49,9 +49,11 @@ def g(x):
 
 # n = n(x,a,l,lp,t)
 def pde(xx, n):
-    dn_dt = dde.grad.jacobian(n, xx, i=0, j=1)
+    #dn_dt = dde.grad.jacobian(n, xx, i=0, j=1)
     dn_dx = dde.grad.jacobian(n, xx, i=0, j=0)
+    dn_dt = dde.grad.jacobian(n, xx, i=0, j=(nfeatures-1))
     #loss = dn_dt + L0/dt*(xx[:,2:3] - xx[:,3:4])*dn_dx - gordon_correction(xx[:,2:3],n) * f(xx[:,0:1], xx[:,1:2]) + n*g(xx[:,0:1])
+    #loss = dn_dt + L0/dt*(xx[:,2:3] - xx[:,3:4])*dn_dx - (1.0-n)  * f(xx[:,0:1], xx[:,1:2]) + n*g(xx[:,0:1])
     loss = dn_dt  - 0.0001*(L0/dt) * dn_dx - (1.0-n) * f(xx[:,0:1], 1.) + n*g(xx[:,0:1])
     return loss + n*(1-tf.sign(n))
     
@@ -61,9 +63,8 @@ timedomain = dde.geometry.TimeDomain(0, 1.0)
 geomtime = dde.geometry.GeometryXTime(geom, timedomain)
 
 ic1 = dde.icbc.IC(geomtime, lambda x: 0.0, lambda _, on_initial: on_initial)
-data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=1000000, num_initial=100000)
-net = dde.nn.FNN([2] + [40] * 3 + [1], "sigmoid", "Glorot normal")
-#net = dde.nn.MsFFN([2] + [40] * 3 + [1], "sigmoid", "Glorot normal", sigmas=[1, 10])
+data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=100000, num_initial=10000)
+net = dde.nn.FNN([nfeatures] + [40] * 3 + [1], "sigmoid", "Glorot normal")
 model = dde.Model(data, net)
 
 model.compile("adam", lr=1e-2, loss_weights=[1.e-1, 1])
