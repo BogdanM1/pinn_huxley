@@ -52,16 +52,16 @@ def pde(xx, n):
     dn_dt = dde.grad.jacobian(n, xx, i=0, j=1)
     dn_dx = dde.grad.jacobian(n, xx, i=0, j=0)
     #loss = dn_dt + L0/dt*(xx[:,2:3] - xx[:,3:4])*dn_dx - gordon_correction(xx[:,2:3],n) * f(xx[:,0:1], xx[:,1:2]) + n*g(xx[:,0:1])
-    loss = dn_dt  - 0.0002*(L0/dt) * dn_dx - (1.0-n) * f(xx[:,0:1], 1.) + n*g(xx[:,0:1])
+    loss = dn_dt  - 0.0001*(L0/dt) * dn_dx - (1.0-n) * f(xx[:,0:1], 1.) + n*g(xx[:,0:1])
     return loss + n*(1-tf.sign(n))
     
   
-geom = dde.geometry.geometry_nd.Hypercube([-20.8],[63.])
-timedomain = dde.geometry.TimeDomain(0, .05)
+geom = dde.geometry.geometry_nd.Hypercube([-10.],[30.])
+timedomain = dde.geometry.TimeDomain(0, 1.0)
 geomtime = dde.geometry.GeometryXTime(geom, timedomain)
 
 ic1 = dde.icbc.IC(geomtime, lambda x: 0.0, lambda _, on_initial: on_initial)
-data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=10000, num_initial=1000)
+data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=1000000, num_initial=100000)
 net = dde.nn.FNN([2] + [40] * 3 + [1], "sigmoid", "Glorot normal")
 #net = dde.nn.MsFFN([2] + [40] * 3 + [1], "sigmoid", "Glorot normal", sigmas=[1, 10])
 model = dde.Model(data, net)
@@ -77,7 +77,7 @@ model.save("../models/tmpmodel")
 #os.system("python3 convert_ckpt_to_pb.py "+ str(train_state.step)+ " dense_3/BiasAdd")
 #os.system("python3 test_pb_file.py "+ str(nfeatures))
 
-df = pd.read_csv('../data/input.csv')
+df = pd.read_csv('../data/inputt1.csv')
 input_n = df['n']
 df_in = df.iloc[:, :nfeatures]
 test_sample = df_in.to_numpy()
