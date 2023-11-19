@@ -49,7 +49,6 @@ def g(x):
 
 # n = n(x,a,l,lp,t)
 def pde(xx, n):
-    #dn_dt = dde.grad.jacobian(n, xx, i=0, j=1)
     dn_dx = dde.grad.jacobian(n, xx, i=0, j=0)
     dn_dt = dde.grad.jacobian(n, xx, i=0, j=(nfeatures-1))
     #loss = dn_dt + L0/dt*(xx[:,2:3] - xx[:,3:4])*dn_dx - gordon_correction(xx[:,2:3],n) * f(xx[:,0:1], xx[:,1:2]) + n*g(xx[:,0:1])
@@ -63,13 +62,13 @@ timedomain = dde.geometry.TimeDomain(0, 1.0)
 geomtime = dde.geometry.GeometryXTime(geom, timedomain)
 
 ic1 = dde.icbc.IC(geomtime, lambda x: 0.0, lambda _, on_initial: on_initial)
-data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=100000, num_initial=10000)
+data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=100000, num_initial=10000, train_distribution='Hammersley', num_test=10000)
 net = dde.nn.FNN([nfeatures] + [40] * 3 + [1], "sigmoid", "Glorot normal")
 model = dde.Model(data, net)
 
 model.compile("adam", lr=1e-2, loss_weights=[1.e-1, 1])
 losshistory, train_state = model.train(100000)
-model.compile("L-BFGS", loss_weights=[1.e-0, 1])
+model.compile("L-BFGS", loss_weights=[1.e-1, 1])
 losshistory, train_state = model.train()
 #dde.saveplot(losshistory, train_state, issave=True, isplot=True)
 

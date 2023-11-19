@@ -42,10 +42,10 @@ void huxpinn_init(int* n_qpoints, double*Kxb, double*xstart, double*xend, int *x
 		for(int ix = 0; ix < huxpinn_xdiv; ix++)
 		{
 			huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures] = huxpinn_xstart + ix*huxpinn_xstep;
-			huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 1] = 0.0;
-      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 2] = 0.0;
+			huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 4] = 0.0;
+      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 1] = 0.0;
+      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 2] = 1.0;
       huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 3] = 1.0;
-      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 4] = 1.0;
 		}
 			
 	}
@@ -59,8 +59,8 @@ void huxpinn_init(int* n_qpoints, double*Kxb, double*xstart, double*xend, int *x
 	}
 	
 	// input/output operations
-	huxpinn_input_ops = {{TF_GraphOperationByName(huxpinn_graph, "dense_input"), 0}};
-	huxpinn_out_ops = {{TF_GraphOperationByName(huxpinn_graph, "dense_8/BiasAdd"), 0}}; 
+	huxpinn_input_ops = {{TF_GraphOperationByName(huxpinn_graph, "Placeholder_1"), 0}};
+	huxpinn_out_ops = {{TF_GraphOperationByName(huxpinn_graph, "dense_3/BiasAdd"), 0}}; 
 	
 	// create huxpinn_session 
 	huxpinn_session = tf_utils::CreateSession(huxpinn_graph);
@@ -77,10 +77,10 @@ void huxpinn_set_values(int * qindex, double *time, double* activation, double* 
 	int qindex_start = (* qindex)*(huxpinn_nfeatures*huxpinn_xdiv);
 	for(int ix = 0; ix < huxpinn_xdiv; ix++)
 	{
-		huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 1] = *time;
-   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 2] = *activation;
-   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 3] = *stretch;
-   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 4] = *stretch_prev; // (*stretch_prev - *stretch)*(huxpinn_L0/huxpinn_dt)
+		huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 4] = *time;
+   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 1] = *activation;
+   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 2] = *stretch;
+   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 3] = *stretch_prev; // (*stretch_prev - *stretch)*(huxpinn_L0/huxpinn_dt)
 	}	
 }
 
