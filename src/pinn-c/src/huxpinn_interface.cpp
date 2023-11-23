@@ -59,7 +59,7 @@ void huxpinn_init(int* n_qpoints, double*Kxb, double*xstart, double*xend, int *x
 	}
 	
 	// input/output operations
-	huxpinn_input_ops = {{TF_GraphOperationByName(huxpinn_graph, "Placeholder_1"), 0}};
+	huxpinn_input_ops = {{TF_GraphOperationByName(huxpinn_graph, "Placeholder_2"), 0}};
 	huxpinn_out_ops = {{TF_GraphOperationByName(huxpinn_graph, "dense_3/BiasAdd"), 0}}; 
 	
 	// create huxpinn_session 

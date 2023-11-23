@@ -53,37 +53,27 @@ def pde(xx, n):
     dn_dt = dde.grad.jacobian(n, xx, i=0, j=(nfeatures-1))
     #loss = dn_dt + L0/dt*(xx[:,2:3] - xx[:,3:4])*dn_dx - gordon_correction(xx[:,2:3],n) * f(xx[:,0:1], xx[:,1:2]) + n*g(xx[:,0:1])
     #loss = dn_dt + L0/dt*(xx[:,2:3] - xx[:,3:4])*dn_dx - (1.0-n)  * f(xx[:,0:1], xx[:,1:2]) + n*g(xx[:,0:1])
-    loss = dn_dt  - 0.0001*(L0/dt) * dn_dx - (1.0-n) * f(xx[:,0:1], 1.) + n*g(xx[:,0:1])
+    loss = dn_dt  - 0.0002*(L0/dt) * dn_dx - (1.0-n) * f(xx[:,0:1], 1.) + n*g(xx[:,0:1])
     return loss + n*(1-tf.sign(n))
     
   
-geom = dde.geometry.geometry_nd.Hypercube([-10.],[30.])
-timedomain = dde.geometry.TimeDomain(0, 1.0)
+geom = dde.geometry.geometry_nd.Hypercube([-20.8], [63.])
+timedomain = dde.geometry.TimeDomain(0, 100.0)
 geomtime = dde.geometry.GeometryXTime(geom, timedomain)
 
 ic1 = dde.icbc.IC(geomtime, lambda x: 0.0, lambda _, on_initial: on_initial)
-data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=100000, num_initial=10000, train_distribution='Hammersley', num_test=10000)
+data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=int(1e+6), num_initial=int(1e+4), train_distribution='Hammersley', num_test=int(1e+4))
 net = dde.nn.FNN([nfeatures] + [40] * 3 + [1], "sigmoid", "Glorot normal")
 model = dde.Model(data, net)
 
 model.compile("adam", lr=1e-2, loss_weights=[1.e-1, 1])
-losshistory, train_state = model.train(100000)
+losshistory, train_state = model.train(60000)
 model.compile("L-BFGS", loss_weights=[1.e-1, 1])
 losshistory, train_state = model.train()
 #dde.saveplot(losshistory, train_state, issave=True, isplot=True)
 
 model.save("../models/tmpmodel")
-#print(model.predict(np.array([[14, .1, 1., 1., .4]])))
-#os.system("python3 convert_ckpt_to_pb.py "+ str(train_state.step)+ " dense_3/BiasAdd")
-#os.system("python3 test_pb_file.py "+ str(nfeatures))
+os.system("python3 convert_ckpt_to_pb.py "+ str(train_state.step)+ " dense_3/BiasAdd")
+os.system("python3 test_pb_file.py "+ str(nfeatures))
 
-df = pd.read_csv('../data/inputt1.csv')
-input_n = df['n']
-df_in = df.iloc[:, :nfeatures]
-test_sample = df_in.to_numpy()
-predictions = model.predict(test_sample)
-df['pb_prediction'] = predictions[:,0]
-df.to_csv('../results/prediction.csv', index=False)
-# Calculate the correlation coefficient
-correlation_coefficient = input_n.corr(df['pb_prediction'])
-print("Correlation Coefficient:", correlation_coefficient)
+
