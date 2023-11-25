@@ -58,11 +58,11 @@ def pde(xx, n):
     
   
 geom = dde.geometry.geometry_nd.Hypercube([-20.8], [63.])
-timedomain = dde.geometry.TimeDomain(0, 100.0)
+timedomain = dde.geometry.TimeDomain(0, 1.0)
 geomtime = dde.geometry.GeometryXTime(geom, timedomain)
 
 ic1 = dde.icbc.IC(geomtime, lambda x: 0.0, lambda _, on_initial: on_initial)
-data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=int(1e+6), num_initial=int(1e+4), train_distribution='Hammersley', num_test=int(1e+4))
+data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=int(1e+4), num_initial=int(1e+3), train_distribution='Hammersley', num_test=int(1e+3))
 net = dde.nn.FNN([nfeatures] + [40] * 3 + [1], "sigmoid", "Glorot normal")
 model = dde.Model(data, net)
 

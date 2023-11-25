@@ -22,6 +22,7 @@ grdstress = [0.0, 0.782, 1.0, 1.0, 0.0, 0.0]
 # change
 V=0.0002*(L0/dt)
 s=1.1
+v=2*V/s
 
 def NAnalytical(x):
 
@@ -29,13 +30,13 @@ def NAnalytical(x):
   
   phi = (f1_0 + g1) * (h / s)
   term1 = f1_0 / (f1_0 + g1)
-  term2 = 1 - math.exp(-phi / V)
-  term3 = math.exp(2 * g2 * (x / (s * V)))  
+  term2 = 1 - math.exp(-phi / v)
+  term3 = math.exp(2 * g2 * (x / (s * v)))  
   
   if(x<0):return (term1*term2*term3)
   
   term2 = (x*x)/(h*h)-1 
-  term3 = phi/V
+  term3 = phi/v
   
   return (term1*(1-math.exp(term2*term3)))
 
@@ -73,7 +74,7 @@ correlation_coefficient = input_n.corr(df['pb_prediction'])
 print("Correlation Coefficient:", correlation_coefficient)
 
 df = pd.read_csv('../data/test.csv')
-df['t']=100 
+df['t']=1000 
 test_sample = df.to_numpy()
 
 with tf.compat.v1.Session() as sess:
