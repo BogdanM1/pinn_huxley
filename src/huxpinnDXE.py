@@ -12,7 +12,7 @@ dde.config.set_random_seed(100)
 os.system("rm ../models/*")
 
 ''' hyperparameters '''
-nfeatures=2
+nfeatures=3
 
 ''' fixed parameters ''' 
 f1_0 = 43.3 
@@ -53,16 +53,17 @@ def pde(xx, n):
     dn_dt = dde.grad.jacobian(n, xx, i=0, j=(nfeatures-1))
     #loss = dn_dt + L0/dt*(xx[:,2:3] - xx[:,3:4])*dn_dx - gordon_correction(xx[:,2:3],n) * f(xx[:,0:1], xx[:,1:2]) + n*g(xx[:,0:1])
     #loss = dn_dt + L0/dt*(xx[:,2:3] - xx[:,3:4])*dn_dx - (1.0-n)  * f(xx[:,0:1], xx[:,1:2]) + n*g(xx[:,0:1])
-    loss = dn_dt  - 0.0002*(L0/dt) * dn_dx - (1.0-n) * f(xx[:,0:1], 1.) + n*g(xx[:,0:1])
+    #loss = dn_dt  - 0.0002*(L0/dt) * dn_dx - (1.0-n) * f(xx[:,0:1], 1.) + n*g(xx[:,0:1])
+    loss = dn_dt  - xx[:,1:2] * dn_dx - (1.0-n) * f(xx[:,0:1], 1.) + n*g(xx[:,0:1])
     return loss + n*(1-tf.sign(n))
     
   
-geom = dde.geometry.geometry_nd.Hypercube([-20.8], [63.])
-timedomain = dde.geometry.TimeDomain(0, 1.0)
+geom = dde.geometry.geometry_nd.Hypercube([-25., 100.0], [25.,1500.])
+timedomain = dde.geometry.TimeDomain(0, .5)
 geomtime = dde.geometry.GeometryXTime(geom, timedomain)
 
 ic1 = dde.icbc.IC(geomtime, lambda x: 0.0, lambda _, on_initial: on_initial)
-data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=int(1e+4), num_initial=int(1e+3), train_distribution='Hammersley', num_test=int(1e+3))
+data = dde.data.TimePDE(geomtime, pde, [ic1], num_domain=int(6e+6), num_initial=int(1e+3), train_distribution='Hammersley', num_test=int(5e+2))
 net = dde.nn.FNN([nfeatures] + [40] * 3 + [1], "sigmoid", "Glorot normal")
 model = dde.Model(data, net)
 
