@@ -1,1 +1,0 @@
-/home/bogdan/pinn_huxley/src/pinn-c-isom/build/CMakeFiles/huxpinn.dir

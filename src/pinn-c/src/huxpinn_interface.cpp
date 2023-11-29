@@ -18,7 +18,7 @@ vector<float> huxpinn_output_values;
 double huxpinn_Kxb, huxpinn_xstart, huxpinn_xend, huxpinn_L0, huxpinn_A, huxpinn_xstep, huxpinn_dt=0.001;
 int huxpinn_xdiv;
 
-int huxpinn_nfeatures = 5;
+int huxpinn_nfeatures = 4;
 
 void huxpinn_init(int* n_qpoints, double*Kxb, double*xstart, double*xend, int *xdiv, 
 				  double*L0, double *A, char* model_path)
@@ -42,10 +42,11 @@ void huxpinn_init(int* n_qpoints, double*Kxb, double*xstart, double*xend, int *x
 		for(int ix = 0; ix < huxpinn_xdiv; ix++)
 		{
 			huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures] = huxpinn_xstart + ix*huxpinn_xstep;
-			huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 4] = 0.0;
-      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 1] = 0.0;
-      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 2] = 1.0;
-      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 3] = 1.0;
+			
+      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 1] = 0.0; // v
+      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 2] = 0.0; // a
+      huxpinn_input_values[qindex_start + ix*huxpinn_nfeatures + 3] = 0.0; // t
+     
 		}
 			
 	}
@@ -77,10 +78,9 @@ void huxpinn_set_values(int * qindex, double *time, double* activation, double* 
 	int qindex_start = (* qindex)*(huxpinn_nfeatures*huxpinn_xdiv);
 	for(int ix = 0; ix < huxpinn_xdiv; ix++)
 	{
-		huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 4] = *time;
-   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 1] = *activation;
-   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 2] = *stretch;
-   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 3] = *stretch_prev; // (*stretch_prev - *stretch)*(huxpinn_L0/huxpinn_dt)
+   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 1] = (*stretch_prev - *stretch)*(huxpinn_L0/huxpinn_dt);
+   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 2] = *activation;
+   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 3] = *time; 
 	}	
 }
 
