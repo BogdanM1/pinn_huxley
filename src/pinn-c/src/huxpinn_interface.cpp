@@ -1,5 +1,7 @@
 #include "huxpinn_interface.hpp"
 #include <fstream>
+#include <cmath>
+
 
 using namespace std;
 using std::vector;
@@ -75,10 +77,16 @@ void huxpinn_init(int* n_qpoints, double*Kxb, double*xstart, double*xend, int *x
 
 void huxpinn_set_values(int * qindex, double *time, double* activation, double* stretch, double *stretch_prev)
 {
-	int qindex_start = (* qindex)*(huxpinn_nfeatures*huxpinn_xdiv);
+	 int qindex_start = (* qindex)*(huxpinn_nfeatures*huxpinn_xdiv);
+   double v = 0;
+   double stretchdiff = *stretch_prev - *stretch;
+   if(fabs(stretchdiff) > 1e-5) 
+   { 
+     v = stretchdiff*(huxpinn_L0/huxpinn_dt);
+   }
 	for(int ix = 0; ix < huxpinn_xdiv; ix++)
 	{
-   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 1] = (*stretch_prev - *stretch)*(huxpinn_L0/huxpinn_dt);
+   huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 1] = v;
    huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 2] = *activation;
    huxpinn_input_values[qindex_start +  ix*huxpinn_nfeatures + 3] = *time; 
 	}	
@@ -100,6 +108,7 @@ void huxpinn_predict()
 	{  
 		printf("%.8lf %.8lf\n",huxpinn_input_values[i], huxpinn_input_values[i+1]);
 	}
+ getchar();
 	cout << "\n";
 	/*******************************************/
 
@@ -117,12 +126,11 @@ void huxpinn_predict()
  
 }
 
-void huxpinn_get_values(int *qindex, double * stress, double * dstress)
+void huxpinn_get_values(int *qindex, double * stress, double * dstress, double *stretch)
 { 
 	int qindex_start = (* qindex)*(huxpinn_nfeatures*huxpinn_xdiv);
 	*stress = .0;
 	*dstress = .0;
-	double stretch = 1.0;
 	double n,x, n_prev, x_prev;
 	for(int ix=1; ix<huxpinn_xdiv; ix++)
 	{
@@ -139,8 +147,9 @@ void huxpinn_get_values(int *qindex, double * stress, double * dstress)
 	}
 	
 	*stress = ((*stress) * huxpinn_Kxb)/ huxpinn_A;
-	*dstress = ((*dstress)*huxpinn_Kxb * stretch* huxpinn_L0)/ huxpinn_A;
-// printf("stress: %lf %lf\n\n",*stress,*dstress);
+	*dstress = ((*dstress)*huxpinn_Kxb * (*stretch) * huxpinn_L0)/ huxpinn_A;
+// printf("stress: %lf %lf %lf\n\n",*stretch,*stress,*dstress);
+// getchar();
 }
 
 void huxpinn_destroy()
