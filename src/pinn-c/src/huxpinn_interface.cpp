@@ -115,10 +115,12 @@ void huxpinn_predict()
 	tf_utils::RunSession(huxpinn_session, huxpinn_input_ops, input_tensors, huxpinn_out_ops, output_tensors);
 	huxpinn_output_values = tf_utils::GetTensorData<float>(output_tensors[0]);
 
-	/*********** debug *******************
+	/*********** debug ********************/
 	cout << "prediction\n";
 	for(int i=0; i< (int)huxpinn_output_values.size(); i+=1)
-		printf("%.19lf\n",huxpinn_output_values[i]);
+		printf("%.9lf %.9lf %.9lf %.9lf %.9lf\n",huxpinn_input_values[huxpinn_nfeatures*i], huxpinn_input_values[huxpinn_nfeatures*i+1],
+                                             huxpinn_input_values[huxpinn_nfeatures*i+2], huxpinn_input_values[huxpinn_nfeatures*i+3],
+                                             huxpinn_output_values[i]);
 	cout << "\n";
 	/***************************************/	
 	tf_utils::DeleteTensors(input_tensors);
@@ -163,7 +165,7 @@ void huxpinn_destroy()
 
 
 /*
-// test *
+// test **/
 int main()
 {
 	int nqp = 1, iqp = 0;
@@ -175,13 +177,13 @@ int main()
  
   double sim_duration = .4;
 	double dt = 0.001; 
-  double stretch_start = 1.0, stretch_end=0.75;
+  double stretch_start = 1.0, stretch_end=1.0;
   double stretch_delta = (stretch_end - stretch_start)/(sim_duration/dt);
 
-	/** params *
-	double Kxb = 0.58, A = 130.0, L0 = 1100.0, xstart = -20.8, xend = 62.4;
-	int xdiv = 16; 
-	/***********
+	/** params **/
+	double Kxb = 0.58, A = 130.0, L0 = 1100.0, xstart = -5.2, xend = 20.28;
+	int xdiv = 20; 
+	/***********/
 	
 	huxpinn_init(&nqp, &Kxb, &xstart, &xend, &xdiv, &L0, &A);              
 	while (abs(time - sim_duration) > 1e-6)
@@ -189,7 +191,7 @@ int main()
 		time = time + dt;
 		huxpinn_set_values(&iqp,&time,&activation,&stretch,&stretch_prev);
 		huxpinn_predict();
-		huxpinn_get_values(&iqp,&stress,&dstress);	
+		huxpinn_get_values(&iqp,&stress,&dstress,&stretch);	
 		printf("%lf,%lf,%lf,%lf\n",time,stretch,stress,dstress);
       
     stretch_prev = stretch;

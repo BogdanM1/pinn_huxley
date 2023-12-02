@@ -1,0 +1,1492 @@
+2000      [7.37e-01, 1.39e-02]    [5.36e-01, 1.39e-02]    []  
+3000      [4.70e-01, 1.59e-02]    [3.59e-01, 1.59e-02]    []  
+4000      [4.27e-01, 1.62e-02]    [3.19e-01, 1.62e-02]    []  
+5000      [4.19e-01, 1.63e-02]    [3.51e-01, 1.63e-02]    []  
+6000      [3.39e-01, 1.68e-02]    [2.56e-01, 1.68e-02]    []  
+7000      [3.14e-01, 1.65e-02]    [2.61e-01, 1.65e-02]    []  
+8000      [2.54e-01, 1.69e-02]    [1.88e-01, 1.69e-02]    []  
+9000      [2.44e-01, 1.74e-02]    [1.89e-01, 1.74e-02]    []  
+10000     [2.07e-01, 1.73e-02]    [1.52e-01, 1.73e-02]    []  
+11000     [2.23e-01, 1.76e-02]    [1.50e-01, 1.76e-02]    []  
+12000     [1.90e-01, 1.77e-02]    [1.29e-01, 1.77e-02]    []  
+13000     [1.74e-01, 1.79e-02]    [1.09e-01, 1.79e-02]    []  
+14000     [2.10e-01, 1.68e-02]    [1.47e-01, 1.68e-02]    []  
+15000     [1.60e-01, 1.80e-02]    [9.42e-02, 1.80e-02]    []  
+16000     [1.45e-01, 1.75e-02]    [7.74e-02, 1.75e-02]    []  
+17000     [1.35e-01, 1.77e-02]    [6.63e-02, 1.77e-02]    []  
+18000     [1.31e-01, 1.79e-02]    [5.94e-02, 1.79e-02]    []  
+19000     [1.77e-01, 1.71e-02]    [1.12e-01, 1.71e-02]    []  
+20000     [1.26e-01, 1.76e-02]    [5.78e-02, 1.76e-02]    []  
+21000     [1.29e-01, 1.80e-02]    [6.83e-02, 1.80e-02]    []  
+22000     [1.21e-01, 1.75e-02]    [4.75e-02, 1.75e-02]    []  
+23000     [1.06e-01, 1.78e-02]    [5.96e-02, 1.78e-02]    []  
+24000     [1.06e-01, 1.78e-02]    [4.36e-02, 1.78e-02]    []  
+25000     [1.18e-01, 1.74e-02]    [5.46e-02, 1.74e-02]    []  
+26000     [8.38e-02, 1.78e-02]    [2.48e-02, 1.78e-02]    []  
+27000     [1.02e-01, 1.75e-02]    [3.91e-02, 1.75e-02]    []  
+28000     [1.16e-01, 1.74e-02]    [4.98e-02, 1.74e-02]    []  
+29000     [8.74e-02, 1.77e-02]    [3.19e-02, 1.77e-02]    []  
+30000     [8.50e-02, 1.82e-02]    [5.35e-02, 1.82e-02]    []  
+31000     [8.42e-02, 1.86e-02]    [3.97e-02, 1.86e-02]    []  
+32000     [8.70e-02, 1.85e-02]    [5.03e-02, 1.85e-02]    []  
+33000     [7.75e-02, 1.78e-02]    [3.67e-02, 1.78e-02]    []  
+34000     [8.41e-02, 1.76e-02]    [3.44e-02, 1.76e-02]    []  
+35000     [6.90e-02, 1.78e-02]    [2.97e-02, 1.78e-02]    []  
+36000     [9.77e-02, 1.87e-02]    [7.94e-02, 1.87e-02]    []  
+37000     [9.29e-02, 1.73e-02]    [4.29e-02, 1.73e-02]    []  
+38000     [5.85e-02, 1.81e-02]    [2.16e-02, 1.81e-02]    []  
+39000     [8.17e-02, 1.76e-02]    [3.29e-02, 1.76e-02]    []  
+40000     [5.93e-02, 1.81e-02]    [3.46e-02, 1.81e-02]    []  
+41000     [5.42e-02, 1.80e-02]    [2.96e-02, 1.80e-02]    []  
+42000     [5.75e-02, 1.81e-02]    [3.56e-02, 1.81e-02]    []  
+43000     [6.07e-02, 1.78e-02]    [2.06e-02, 1.78e-02]    []  
+44000     [7.97e-02, 1.87e-02]    [5.78e-02, 1.87e-02]    []  
+45000     [6.77e-02, 1.78e-02]    [1.99e-02, 1.78e-02]    []  
+46000     [5.90e-02, 1.80e-02]    [2.14e-02, 1.80e-02]    []  
+47000     [4.97e-02, 1.79e-02]    [3.00e-02, 1.79e-02]    []  
+48000     [5.43e-02, 1.79e-02]    [2.41e-02, 1.79e-02]    []  
+49000     [5.28e-02, 1.83e-02]    [2.60e-02, 1.83e-02]    []  
+50000     [5.76e-02, 1.86e-02]    [6.29e-02, 1.86e-02]    []  
+51000     [4.88e-02, 1.80e-02]    [3.12e-02, 1.80e-02]    []  
+52000     [5.84e-02, 1.76e-02]    [2.94e-02, 1.76e-02]    []  
+53000     [7.83e-02, 1.73e-02]    [3.63e-02, 1.73e-02]    []  
+54000     [4.18e-02, 1.84e-02]    [3.08e-02, 1.84e-02]    []  
+55000     [4.46e-02, 1.82e-02]    [2.55e-02, 1.82e-02]    []  
+56000     [5.39e-02, 1.86e-02]    [5.55e-02, 1.86e-02]    []  
+57000     [5.57e-02, 1.78e-02]    [2.65e-02, 1.78e-02]    []  
+58000     [4.14e-02, 1.84e-02]    [3.00e-02, 1.84e-02]    []  
+59000     [3.75e-02, 1.81e-02]    [2.17e-02, 1.81e-02]    []  
+60000     [3.72e-02, 1.84e-02]    [3.01e-02, 1.84e-02]    []  
+
+Best model at step 60000:
+  train loss: 5.57e-02
+  test loss: 4.85e-02
+  test metric: []
+
+'train' took 10099.012624 s
+
+Compiling model...
+'compile' took 0.173029 s
+
+2023-12-02 01:33:35.719248: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1750] (One-time warning): Not using XLA:CPU for cluster.
+
+If you want XLA:CPU, do one of the following:
+
+ - set the TF_XLA_FLAGS to include "--tf_xla_cpu_global_jit", or
+ - set cpu_global_jit to true on this session's OptimizerOptions, or
+ - use experimental_jit_scope, or
+ - use tf.function(jit_compile=True).
+
+To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a
+proper command-line flag, not via TF_XLA_FLAGS).
+Training model...
+
+Step      Train loss              Test loss               Test metric
+60000     [3.72e-02, 1.84e-02]    [3.01e-02, 1.84e-02]    []  
+61000     [3.37e-02, 1.83e-02]    [3.37e-02, 1.83e-02]        
+62000     [3.26e-02, 1.83e-02]    [3.26e-02, 1.83e-02]        
+63000     [3.15e-02, 1.83e-02]    [3.15e-02, 1.83e-02]        
+64000     [3.04e-02, 1.84e-02]    [3.04e-02, 1.84e-02]        
+65000     [2.92e-02, 1.84e-02]    [2.92e-02, 1.84e-02]        
+66000     [2.81e-02, 1.83e-02]    [2.81e-02, 1.83e-02]        
+67000     [2.71e-02, 1.83e-02]    [2.71e-02, 1.83e-02]        
+68000     [2.59e-02, 1.84e-02]    [2.59e-02, 1.84e-02]        
+69000     [2.51e-02, 1.84e-02]    [2.51e-02, 1.84e-02]        
+70000     [2.43e-02, 1.84e-02]    [2.43e-02, 1.84e-02]        
+71000     [2.36e-02, 1.85e-02]    [2.36e-02, 1.85e-02]        
+72000     [2.29e-02, 1.84e-02]    [2.29e-02, 1.84e-02]        
+73000     [2.23e-02, 1.84e-02]    [2.23e-02, 1.84e-02]        
+74000     [2.16e-02, 1.84e-02]    [2.16e-02, 1.84e-02]        
+75000     [2.09e-02, 1.84e-02]    [2.09e-02, 1.84e-02]        
+76000     [2.04e-02, 1.82e-02]    [2.04e-02, 1.82e-02]        
+76043     [2.04e-02, 1.82e-02]    [1.52e-02, 1.82e-02]    []  
+
+Best model at step 76043:
+  train loss: 3.87e-02
+  test loss: 3.34e-02
+  test metric: []
+
+'train' took 2753.417243 s
+
+Saving loss history to /home/bogdan/pinn_huxley/src/loss.dat ...
+Saving training data to /home/bogdan/pinn_huxley/src/train.dat ...
+Saving test data to /home/bogdan/pinn_huxley/src/test.dat ...
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.5) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+WARNING:tensorflow:From /home/bogdan/.local/lib/python3.8/site-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+2023-12-02 02:19:57.960810: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:19:57.993043: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:19:57.993243: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:19:57.993612: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-12-02 02:19:57.994075: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:19:57.994225: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:19:57.994357: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:19:58.357422: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:19:58.357596: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:19:58.357730: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:19:58.357839: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:42] Overriding orig_value setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+2023-12-02 02:19:58.357869: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 571 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3080, pci bus id: 0000:27:00.0, compute capability: 8.6
+2023-12-02 02:19:58.365969: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:354] MLIR V1 optimization pass is not enabled
+Placeholder
+Placeholder_1
+Placeholder_2
+dense/kernel/Initializer/truncated_normal/shape
+dense/kernel/Initializer/truncated_normal/mean
+dense/kernel/Initializer/truncated_normal/stddev
+dense/kernel/Initializer/truncated_normal/TruncatedNormal
+dense/kernel/Initializer/truncated_normal/mul
+dense/kernel/Initializer/truncated_normal
+dense/kernel
+dense/kernel/Assign
+dense/kernel/read
+dense/bias/Initializer/zeros
+dense/bias
+dense/bias/Assign
+dense/bias/read
+dense/MatMul
+dense/BiasAdd
+dense/Sigmoid
+dense_1/kernel/Initializer/truncated_normal/shape
+dense_1/kernel/Initializer/truncated_normal/mean
+dense_1/kernel/Initializer/truncated_normal/stddev
+dense_1/kernel/Initializer/truncated_normal/TruncatedNormal
+dense_1/kernel/Initializer/truncated_normal/mul
+dense_1/kernel/Initializer/truncated_normal
+dense_1/kernel
+dense_1/kernel/Assign
+dense_1/kernel/read
+dense_1/bias/Initializer/zeros
+dense_1/bias
+dense_1/bias/Assign
+dense_1/bias/read
+dense_1/MatMul
+dense_1/BiasAdd
+dense_1/Sigmoid
+dense_2/kernel/Initializer/truncated_normal/shape
+dense_2/kernel/Initializer/truncated_normal/mean
+dense_2/kernel/Initializer/truncated_normal/stddev
+dense_2/kernel/Initializer/truncated_normal/TruncatedNormal
+dense_2/kernel/Initializer/truncated_normal/mul
+dense_2/kernel/Initializer/truncated_normal
+dense_2/kernel
+dense_2/kernel/Assign
+dense_2/kernel/read
+dense_2/bias/Initializer/zeros
+dense_2/bias
+dense_2/bias/Assign
+dense_2/bias/read
+dense_2/MatMul
+dense_2/BiasAdd
+dense_2/Sigmoid
+dense_3/kernel/Initializer/truncated_normal/shape
+dense_3/kernel/Initializer/truncated_normal/mean
+dense_3/kernel/Initializer/truncated_normal/stddev
+dense_3/kernel/Initializer/truncated_normal/TruncatedNormal
+dense_3/kernel/Initializer/truncated_normal/mul
+dense_3/kernel/Initializer/truncated_normal
+dense_3/kernel
+dense_3/kernel/Assign
+dense_3/kernel/read
+dense_3/bias/Initializer/zeros
+dense_3/bias
+dense_3/bias/Assign
+dense_3/bias/read
+dense_3/MatMul
+dense_3/BiasAdd
+Placeholder_3
+save/filename/input
+save/filename
+save/Const
+save/SaveV2/tensor_names
+save/SaveV2/shape_and_slices
+save/SaveV2
+save/control_dependency
+save/RestoreV2/tensor_names
+save/RestoreV2/shape_and_slices
+save/RestoreV2
+save/Assign
+save/Assign_1
+save/Assign_2
+save/Assign_3
+save/Assign_4
+save/Assign_5
+save/Assign_6
+save/Assign_7
+save/restore_all
+gradients/Shape
+gradients/grad_ys_0/Const
+gradients/grad_ys_0
+gradients/dense_3/BiasAdd_grad/BiasAddGrad
+gradients/dense_3/MatMul_grad/MatMul
+gradients/dense_3/MatMul_grad/MatMul_1
+gradients/dense_2/Sigmoid_grad/SigmoidGrad
+gradients/dense_2/BiasAdd_grad/BiasAddGrad
+gradients/dense_2/MatMul_grad/MatMul
+gradients/dense_2/MatMul_grad/MatMul_1
+gradients/dense_1/Sigmoid_grad/SigmoidGrad
+gradients/dense_1/BiasAdd_grad/BiasAddGrad
+gradients/dense_1/MatMul_grad/MatMul
+gradients/dense_1/MatMul_grad/MatMul_1
+gradients/dense/Sigmoid_grad/SigmoidGrad
+gradients/dense/BiasAdd_grad/BiasAddGrad
+gradients/dense/MatMul_grad/MatMul
+gradients/dense/MatMul_grad/MatMul_1
+strided_slice/stack
+strided_slice/stack_1
+strided_slice/stack_2
+strided_slice
+strided_slice_1/stack
+strided_slice_1/stack_1
+strided_slice_1/stack_2
+strided_slice_1
+strided_slice_2/stack
+strided_slice_2/stack_1
+strided_slice_2/stack_2
+strided_slice_2
+mul
+sub
+sub_1/x
+sub_1
+strided_slice_3/stack
+strided_slice_3/stack_1
+strided_slice_3/stack_2
+strided_slice_3
+strided_slice_4/stack
+strided_slice_4/stack_1
+strided_slice_4/stack_2
+strided_slice_4
+Sign
+add/x
+add
+sub_2/y
+sub_2
+Sign_1
+sub_3/x
+sub_3
+mul_1
+mul_2/x
+mul_2
+mul_3
+truediv/y
+truediv
+mul_4
+mul_5/y
+mul_5
+mul_6
+sub_4
+strided_slice_5/stack
+strided_slice_5/stack_1
+strided_slice_5/stack_2
+strided_slice_5
+Sign_2
+sub_5/x
+sub_5
+mul_7/x
+mul_7
+mul_8/y
+mul_8
+Sign_3
+add_1/x
+add_1
+mul_9/x
+mul_9
+sub_6/y
+sub_6
+Sign_4
+sub_7/x
+sub_7
+mul_10
+mul_11/x
+mul_11
+truediv_1/y
+truediv_1
+mul_12
+add_2
+sub_8/y
+sub_8
+Sign_5
+add_3/x
+add_3
+mul_13/x
+mul_13
+mul_14/x
+mul_14
+truediv_2/y
+truediv_2
+mul_15
+add_4
+mul_16
+add_5
+Sign_6
+sub_9/x
+sub_9
+mul_17
+add_6
+strided_slice_6/stack
+strided_slice_6/stack_1
+strided_slice_6/stack_2
+strided_slice_6
+zeros_like
+sub_10
+Square
+Const
+Mean
+Const_1
+strided_slice_7/stack
+strided_slice_7/stack_1
+strided_slice_7/stack_2
+strided_slice_7
+sub_11
+zeros_like_1
+sub_12
+Square_1
+Const_2
+Mean_1
+packed
+mul_18/y
+mul_18
+strided_slice_8/stack
+strided_slice_8/stack_1
+strided_slice_8/stack_2
+strided_slice_8
+strided_slice_9/stack
+strided_slice_9/stack_1
+strided_slice_9/stack_2
+strided_slice_9
+strided_slice_10/stack
+strided_slice_10/stack_1
+strided_slice_10/stack_2
+strided_slice_10
+mul_19
+sub_13
+sub_14/x
+sub_14
+strided_slice_11/stack
+strided_slice_11/stack_1
+strided_slice_11/stack_2
+strided_slice_11
+strided_slice_12/stack
+strided_slice_12/stack_1
+strided_slice_12/stack_2
+strided_slice_12
+Sign_7
+add_7/x
+add_7
+sub_15/y
+sub_15
+Sign_8
+sub_16/x
+sub_16
+mul_20
+mul_21/x
+mul_21
+mul_22
+truediv_3/y
+truediv_3
+mul_23
+mul_24/y
+mul_24
+mul_25
+sub_17
+strided_slice_13/stack
+strided_slice_13/stack_1
+strided_slice_13/stack_2
+strided_slice_13
+Sign_9
+sub_18/x
+sub_18
+mul_26/x
+mul_26
+mul_27/y
+mul_27
+Sign_10
+add_8/x
+add_8
+mul_28/x
+mul_28
+sub_19/y
+sub_19
+Sign_11
+sub_20/x
+sub_20
+mul_29
+mul_30/x
+mul_30
+truediv_4/y
+truediv_4
+mul_31
+add_9
+sub_21/y
+sub_21
+Sign_12
+add_10/x
+add_10
+mul_32/x
+mul_32
+mul_33/x
+mul_33
+truediv_5/y
+truediv_5
+mul_34
+add_11
+mul_35
+add_12
+Sign_13
+sub_22/x
+sub_22
+mul_36
+add_13
+strided_slice_14/stack
+strided_slice_14/stack_1
+strided_slice_14/stack_2
+strided_slice_14
+zeros_like_2
+sub_23
+Square_2
+Const_3
+Mean_2
+Const_4
+strided_slice_15/stack
+strided_slice_15/stack_1
+strided_slice_15/stack_2
+strided_slice_15
+sub_24
+zeros_like_3
+sub_25
+Square_3
+Const_5
+Mean_3
+packed_1
+mul_37/y
+mul_37
+Const_6
+Sum
+gradients_1/Shape
+gradients_1/grad_ys_0/Const
+gradients_1/grad_ys_0
+gradients_1/Sum_grad/Reshape/shape
+gradients_1/Sum_grad/Reshape
+gradients_1/Sum_grad/Const
+gradients_1/Sum_grad/Tile
+gradients_1/mul_18_grad/Mul
+gradients_1/mul_18_grad/Mul_1
+gradients_1/mul_18_grad/tuple/group_deps
+gradients_1/mul_18_grad/tuple/control_dependency
+gradients_1/mul_18_grad/tuple/control_dependency_1
+gradients_1/packed_grad/unstack
+gradients_1/packed_grad/tuple/group_deps
+gradients_1/packed_grad/tuple/control_dependency
+gradients_1/packed_grad/tuple/control_dependency_1
+gradients_1/Mean_grad/Reshape/shape
+gradients_1/Mean_grad/Reshape
+gradients_1/Mean_grad/Shape
+gradients_1/Mean_grad/Tile
+gradients_1/Mean_grad/Shape_1
+gradients_1/Mean_grad/Shape_2
+gradients_1/Mean_grad/Const
+gradients_1/Mean_grad/Prod
+gradients_1/Mean_grad/Const_1
+gradients_1/Mean_grad/Prod_1
+gradients_1/Mean_grad/Maximum/y
+gradients_1/Mean_grad/Maximum
+gradients_1/Mean_grad/floordiv
+gradients_1/Mean_grad/Cast
+gradients_1/Mean_grad/truediv
+gradients_1/Mean_1_grad/Reshape/shape
+gradients_1/Mean_1_grad/Reshape
+gradients_1/Mean_1_grad/Shape
+gradients_1/Mean_1_grad/Tile
+gradients_1/Mean_1_grad/Shape_1
+gradients_1/Mean_1_grad/Shape_2
+gradients_1/Mean_1_grad/Const
+gradients_1/Mean_1_grad/Prod
+gradients_1/Mean_1_grad/Const_1
+gradients_1/Mean_1_grad/Prod_1
+gradients_1/Mean_1_grad/Maximum/y
+gradients_1/Mean_1_grad/Maximum
+gradients_1/Mean_1_grad/floordiv
+gradients_1/Mean_1_grad/Cast
+gradients_1/Mean_1_grad/truediv
+gradients_1/Square_grad/Const
+gradients_1/Square_grad/Mul
+gradients_1/Square_grad/Mul_1
+gradients_1/Square_1_grad/Const
+gradients_1/Square_1_grad/Mul
+gradients_1/Square_1_grad/Mul_1
+gradients_1/sub_10_grad/Shape
+gradients_1/sub_10_grad/Shape_1
+gradients_1/sub_10_grad/BroadcastGradientArgs
+gradients_1/sub_10_grad/Sum
+gradients_1/sub_10_grad/Reshape
+gradients_1/sub_10_grad/Neg
+gradients_1/sub_10_grad/Sum_1
+gradients_1/sub_10_grad/Reshape_1
+gradients_1/sub_10_grad/tuple/group_deps
+gradients_1/sub_10_grad/tuple/control_dependency
+gradients_1/sub_10_grad/tuple/control_dependency_1
+gradients_1/sub_12_grad/Shape
+gradients_1/sub_12_grad/Shape_1
+gradients_1/sub_12_grad/BroadcastGradientArgs
+gradients_1/sub_12_grad/Sum
+gradients_1/sub_12_grad/Reshape
+gradients_1/sub_12_grad/Neg
+gradients_1/sub_12_grad/Sum_1
+gradients_1/sub_12_grad/Reshape_1
+gradients_1/sub_12_grad/tuple/group_deps
+gradients_1/sub_12_grad/tuple/control_dependency
+gradients_1/sub_12_grad/tuple/control_dependency_1
+gradients_1/strided_slice_6_grad/Shape
+gradients_1/strided_slice_6_grad/StridedSliceGrad/begin
+gradients_1/strided_slice_6_grad/StridedSliceGrad/end
+gradients_1/strided_slice_6_grad/StridedSliceGrad/strides
+gradients_1/strided_slice_6_grad/StridedSliceGrad
+gradients_1/sub_11_grad/Shape
+gradients_1/sub_11_grad/Shape_1
+gradients_1/sub_11_grad/BroadcastGradientArgs
+gradients_1/sub_11_grad/Sum
+gradients_1/sub_11_grad/Reshape
+gradients_1/sub_11_grad/Neg
+gradients_1/sub_11_grad/Sum_1
+gradients_1/sub_11_grad/Reshape_1
+gradients_1/sub_11_grad/tuple/group_deps
+gradients_1/sub_11_grad/tuple/control_dependency
+gradients_1/sub_11_grad/tuple/control_dependency_1
+gradients_1/add_6_grad/Shape
+gradients_1/add_6_grad/Shape_1
+gradients_1/add_6_grad/BroadcastGradientArgs
+gradients_1/add_6_grad/Sum
+gradients_1/add_6_grad/Reshape
+gradients_1/add_6_grad/Sum_1
+gradients_1/add_6_grad/Reshape_1
+gradients_1/add_6_grad/tuple/group_deps
+gradients_1/add_6_grad/tuple/control_dependency
+gradients_1/add_6_grad/tuple/control_dependency_1
+gradients_1/strided_slice_7_grad/Shape
+gradients_1/strided_slice_7_grad/StridedSliceGrad/begin
+gradients_1/strided_slice_7_grad/StridedSliceGrad/end
+gradients_1/strided_slice_7_grad/StridedSliceGrad/strides
+gradients_1/strided_slice_7_grad/StridedSliceGrad
+gradients_1/add_5_grad/Shape
+gradients_1/add_5_grad/Shape_1
+gradients_1/add_5_grad/BroadcastGradientArgs
+gradients_1/add_5_grad/Sum
+gradients_1/add_5_grad/Reshape
+gradients_1/add_5_grad/Sum_1
+gradients_1/add_5_grad/Reshape_1
+gradients_1/add_5_grad/tuple/group_deps
+gradients_1/add_5_grad/tuple/control_dependency
+gradients_1/add_5_grad/tuple/control_dependency_1
+gradients_1/mul_17_grad/Shape
+gradients_1/mul_17_grad/Shape_1
+gradients_1/mul_17_grad/BroadcastGradientArgs
+gradients_1/mul_17_grad/Mul
+gradients_1/mul_17_grad/Sum
+gradients_1/mul_17_grad/Reshape
+gradients_1/mul_17_grad/Mul_1
+gradients_1/mul_17_grad/Sum_1
+gradients_1/mul_17_grad/Reshape_1
+gradients_1/mul_17_grad/tuple/group_deps
+gradients_1/mul_17_grad/tuple/control_dependency
+gradients_1/mul_17_grad/tuple/control_dependency_1
+gradients_1/sub_4_grad/Shape
+gradients_1/sub_4_grad/Shape_1
+gradients_1/sub_4_grad/BroadcastGradientArgs
+gradients_1/sub_4_grad/Sum
+gradients_1/sub_4_grad/Reshape
+gradients_1/sub_4_grad/Neg
+gradients_1/sub_4_grad/Sum_1
+gradients_1/sub_4_grad/Reshape_1
+gradients_1/sub_4_grad/tuple/group_deps
+gradients_1/sub_4_grad/tuple/control_dependency
+gradients_1/sub_4_grad/tuple/control_dependency_1
+gradients_1/mul_16_grad/Shape
+gradients_1/mul_16_grad/Shape_1
+gradients_1/mul_16_grad/BroadcastGradientArgs
+gradients_1/mul_16_grad/Mul
+gradients_1/mul_16_grad/Sum
+gradients_1/mul_16_grad/Reshape
+gradients_1/mul_16_grad/Mul_1
+gradients_1/mul_16_grad/Sum_1
+gradients_1/mul_16_grad/Reshape_1
+gradients_1/mul_16_grad/tuple/group_deps
+gradients_1/mul_16_grad/tuple/control_dependency
+gradients_1/mul_16_grad/tuple/control_dependency_1
+gradients_1/sub_9_grad/Shape
+gradients_1/sub_9_grad/Shape_1
+gradients_1/sub_9_grad/BroadcastGradientArgs
+gradients_1/sub_9_grad/Sum
+gradients_1/sub_9_grad/Reshape
+gradients_1/sub_9_grad/Neg
+gradients_1/sub_9_grad/Sum_1
+gradients_1/sub_9_grad/Reshape_1
+gradients_1/sub_9_grad/tuple/group_deps
+gradients_1/sub_9_grad/tuple/control_dependency
+gradients_1/sub_9_grad/tuple/control_dependency_1
+gradients_1/sub_grad/Shape
+gradients_1/sub_grad/Shape_1
+gradients_1/sub_grad/BroadcastGradientArgs
+gradients_1/sub_grad/Sum
+gradients_1/sub_grad/Reshape
+gradients_1/sub_grad/Neg
+gradients_1/sub_grad/Sum_1
+gradients_1/sub_grad/Reshape_1
+gradients_1/sub_grad/tuple/group_deps
+gradients_1/sub_grad/tuple/control_dependency
+gradients_1/sub_grad/tuple/control_dependency_1
+gradients_1/mul_6_grad/Shape
+gradients_1/mul_6_grad/Shape_1
+gradients_1/mul_6_grad/BroadcastGradientArgs
+gradients_1/mul_6_grad/Mul
+gradients_1/mul_6_grad/Sum
+gradients_1/mul_6_grad/Reshape
+gradients_1/mul_6_grad/Mul_1
+gradients_1/mul_6_grad/Sum_1
+gradients_1/mul_6_grad/Reshape_1
+gradients_1/mul_6_grad/tuple/group_deps
+gradients_1/mul_6_grad/tuple/control_dependency
+gradients_1/mul_6_grad/tuple/control_dependency_1
+gradients_1/Sign_6_grad/zeros_like
+gradients_1/strided_slice_1_grad/Shape
+gradients_1/strided_slice_1_grad/StridedSliceGrad/begin
+gradients_1/strided_slice_1_grad/StridedSliceGrad/end
+gradients_1/strided_slice_1_grad/StridedSliceGrad/strides
+gradients_1/strided_slice_1_grad/StridedSliceGrad
+gradients_1/mul_grad/Shape
+gradients_1/mul_grad/Shape_1
+gradients_1/mul_grad/BroadcastGradientArgs
+gradients_1/mul_grad/Mul
+gradients_1/mul_grad/Sum
+gradients_1/mul_grad/Reshape
+gradients_1/mul_grad/Mul_1
+gradients_1/mul_grad/Sum_1
+gradients_1/mul_grad/Reshape_1
+gradients_1/mul_grad/tuple/group_deps
+gradients_1/mul_grad/tuple/control_dependency
+gradients_1/mul_grad/tuple/control_dependency_1
+gradients_1/sub_1_grad/Shape
+gradients_1/sub_1_grad/Shape_1
+gradients_1/sub_1_grad/BroadcastGradientArgs
+gradients_1/sub_1_grad/Sum
+gradients_1/sub_1_grad/Reshape
+gradients_1/sub_1_grad/Neg
+gradients_1/sub_1_grad/Sum_1
+gradients_1/sub_1_grad/Reshape_1
+gradients_1/sub_1_grad/tuple/group_deps
+gradients_1/sub_1_grad/tuple/control_dependency
+gradients_1/sub_1_grad/tuple/control_dependency_1
+gradients_1/strided_slice_grad/Shape
+gradients_1/strided_slice_grad/StridedSliceGrad/begin
+gradients_1/strided_slice_grad/StridedSliceGrad/end
+gradients_1/strided_slice_grad/StridedSliceGrad/strides
+gradients_1/strided_slice_grad/StridedSliceGrad
+gradients_1/AddN
+gradients_1/dense_3/BiasAdd_grad/BiasAddGrad
+gradients_1/dense_3/BiasAdd_grad/tuple/group_deps
+gradients_1/dense_3/BiasAdd_grad/tuple/control_dependency
+gradients_1/dense_3/BiasAdd_grad/tuple/control_dependency_1
+gradients_1/AddN_1
+gradients_1/gradients/dense/MatMul_grad/MatMul_grad/MatMul
+gradients_1/gradients/dense/MatMul_grad/MatMul_grad/MatMul_1
+gradients_1/gradients/dense/MatMul_grad/MatMul_grad/tuple/group_deps
+gradients_1/gradients/dense/MatMul_grad/MatMul_grad/tuple/control_dependency
+gradients_1/gradients/dense/MatMul_grad/MatMul_grad/tuple/control_dependency_1
+gradients_1/dense_3/MatMul_grad/MatMul
+gradients_1/dense_3/MatMul_grad/MatMul_1
+gradients_1/dense_3/MatMul_grad/tuple/group_deps
+gradients_1/dense_3/MatMul_grad/tuple/control_dependency
+gradients_1/dense_3/MatMul_grad/tuple/control_dependency_1
+gradients_1/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/mul
+gradients_1/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/mul_1/x
+gradients_1/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/mul_1
+gradients_1/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/mul_2
+gradients_1/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/sub
+gradients_1/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/SigmoidGrad
+gradients_1/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/tuple/group_deps
+gradients_1/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/tuple/control_dependency
+gradients_1/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/tuple/control_dependency_1
+gradients_1/gradients/dense_1/MatMul_grad/MatMul_grad/MatMul
+gradients_1/gradients/dense_1/MatMul_grad/MatMul_grad/MatMul_1
+gradients_1/gradients/dense_1/MatMul_grad/MatMul_grad/tuple/group_deps
+gradients_1/gradients/dense_1/MatMul_grad/MatMul_grad/tuple/control_dependency
+gradients_1/gradients/dense_1/MatMul_grad/MatMul_grad/tuple/control_dependency_1
+gradients_1/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/mul
+gradients_1/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/mul_1/x
+gradients_1/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/mul_1
+gradients_1/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/mul_2
+gradients_1/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/sub
+gradients_1/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/SigmoidGrad
+gradients_1/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/tuple/group_deps
+gradients_1/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/tuple/control_dependency
+gradients_1/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/tuple/control_dependency_1
+gradients_1/gradients/dense_2/MatMul_grad/MatMul_grad/MatMul
+gradients_1/gradients/dense_2/MatMul_grad/MatMul_grad/MatMul_1
+gradients_1/gradients/dense_2/MatMul_grad/MatMul_grad/tuple/group_deps
+gradients_1/gradients/dense_2/MatMul_grad/MatMul_grad/tuple/control_dependency
+gradients_1/gradients/dense_2/MatMul_grad/MatMul_grad/tuple/control_dependency_1
+gradients_1/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/mul
+gradients_1/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/mul_1/x
+gradients_1/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/mul_1
+gradients_1/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/mul_2
+gradients_1/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/sub
+gradients_1/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/SigmoidGrad
+gradients_1/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/tuple/group_deps
+gradients_1/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/tuple/control_dependency
+gradients_1/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/tuple/control_dependency_1
+gradients_1/AddN_2
+gradients_1/dense_2/Sigmoid_grad/SigmoidGrad
+gradients_1/gradients/dense_3/MatMul_grad/MatMul_grad/MatMul
+gradients_1/gradients/dense_3/MatMul_grad/MatMul_grad/MatMul_1
+gradients_1/gradients/dense_3/MatMul_grad/MatMul_grad/tuple/group_deps
+gradients_1/gradients/dense_3/MatMul_grad/MatMul_grad/tuple/control_dependency
+gradients_1/gradients/dense_3/MatMul_grad/MatMul_grad/tuple/control_dependency_1
+gradients_1/dense_2/BiasAdd_grad/BiasAddGrad
+gradients_1/dense_2/BiasAdd_grad/tuple/group_deps
+gradients_1/dense_2/BiasAdd_grad/tuple/control_dependency
+gradients_1/dense_2/BiasAdd_grad/tuple/control_dependency_1
+gradients_1/AddN_3
+gradients_1/dense_2/MatMul_grad/MatMul
+gradients_1/dense_2/MatMul_grad/MatMul_1
+gradients_1/dense_2/MatMul_grad/tuple/group_deps
+gradients_1/dense_2/MatMul_grad/tuple/control_dependency
+gradients_1/dense_2/MatMul_grad/tuple/control_dependency_1
+gradients_1/AddN_4
+gradients_1/dense_1/Sigmoid_grad/SigmoidGrad
+gradients_1/AddN_5
+gradients_1/dense_1/BiasAdd_grad/BiasAddGrad
+gradients_1/dense_1/BiasAdd_grad/tuple/group_deps
+gradients_1/dense_1/BiasAdd_grad/tuple/control_dependency
+gradients_1/dense_1/BiasAdd_grad/tuple/control_dependency_1
+gradients_1/dense_1/MatMul_grad/MatMul
+gradients_1/dense_1/MatMul_grad/MatMul_1
+gradients_1/dense_1/MatMul_grad/tuple/group_deps
+gradients_1/dense_1/MatMul_grad/tuple/control_dependency
+gradients_1/dense_1/MatMul_grad/tuple/control_dependency_1
+gradients_1/AddN_6
+gradients_1/dense/Sigmoid_grad/SigmoidGrad
+gradients_1/AddN_7
+gradients_1/dense/BiasAdd_grad/BiasAddGrad
+gradients_1/dense/BiasAdd_grad/tuple/group_deps
+gradients_1/dense/BiasAdd_grad/tuple/control_dependency
+gradients_1/dense/BiasAdd_grad/tuple/control_dependency_1
+gradients_1/dense/MatMul_grad/MatMul
+gradients_1/dense/MatMul_grad/MatMul_1
+gradients_1/dense/MatMul_grad/tuple/group_deps
+gradients_1/dense/MatMul_grad/tuple/control_dependency
+gradients_1/dense/MatMul_grad/tuple/control_dependency_1
+gradients_1/AddN_8
+beta1_power/initial_value
+beta1_power
+beta1_power/Assign
+beta1_power/read
+beta2_power/initial_value
+beta2_power
+beta2_power/Assign
+beta2_power/read
+dense/kernel/Adam/Initializer/zeros
+dense/kernel/Adam
+dense/kernel/Adam/Assign
+dense/kernel/Adam/read
+dense/kernel/Adam_1/Initializer/zeros
+dense/kernel/Adam_1
+dense/kernel/Adam_1/Assign
+dense/kernel/Adam_1/read
+dense/bias/Adam/Initializer/zeros
+dense/bias/Adam
+dense/bias/Adam/Assign
+dense/bias/Adam/read
+dense/bias/Adam_1/Initializer/zeros
+dense/bias/Adam_1
+dense/bias/Adam_1/Assign
+dense/bias/Adam_1/read
+dense_1/kernel/Adam/Initializer/zeros/shape_as_tensor
+dense_1/kernel/Adam/Initializer/zeros/Const
+dense_1/kernel/Adam/Initializer/zeros
+dense_1/kernel/Adam
+dense_1/kernel/Adam/Assign
+dense_1/kernel/Adam/read
+dense_1/kernel/Adam_1/Initializer/zeros/shape_as_tensor
+dense_1/kernel/Adam_1/Initializer/zeros/Const
+dense_1/kernel/Adam_1/Initializer/zeros
+dense_1/kernel/Adam_1
+dense_1/kernel/Adam_1/Assign
+dense_1/kernel/Adam_1/read
+dense_1/bias/Adam/Initializer/zeros
+dense_1/bias/Adam
+dense_1/bias/Adam/Assign
+dense_1/bias/Adam/read
+dense_1/bias/Adam_1/Initializer/zeros
+dense_1/bias/Adam_1
+dense_1/bias/Adam_1/Assign
+dense_1/bias/Adam_1/read
+dense_2/kernel/Adam/Initializer/zeros/shape_as_tensor
+dense_2/kernel/Adam/Initializer/zeros/Const
+dense_2/kernel/Adam/Initializer/zeros
+dense_2/kernel/Adam
+dense_2/kernel/Adam/Assign
+dense_2/kernel/Adam/read
+dense_2/kernel/Adam_1/Initializer/zeros/shape_as_tensor
+dense_2/kernel/Adam_1/Initializer/zeros/Const
+dense_2/kernel/Adam_1/Initializer/zeros
+dense_2/kernel/Adam_1
+dense_2/kernel/Adam_1/Assign
+dense_2/kernel/Adam_1/read
+dense_2/bias/Adam/Initializer/zeros
+dense_2/bias/Adam
+dense_2/bias/Adam/Assign
+dense_2/bias/Adam/read
+dense_2/bias/Adam_1/Initializer/zeros
+dense_2/bias/Adam_1
+dense_2/bias/Adam_1/Assign
+dense_2/bias/Adam_1/read
+dense_3/kernel/Adam/Initializer/zeros
+dense_3/kernel/Adam
+dense_3/kernel/Adam/Assign
+dense_3/kernel/Adam/read
+dense_3/kernel/Adam_1/Initializer/zeros
+dense_3/kernel/Adam_1
+dense_3/kernel/Adam_1/Assign
+dense_3/kernel/Adam_1/read
+dense_3/bias/Adam/Initializer/zeros
+dense_3/bias/Adam
+dense_3/bias/Adam/Assign
+dense_3/bias/Adam/read
+dense_3/bias/Adam_1/Initializer/zeros
+dense_3/bias/Adam_1
+dense_3/bias/Adam_1/Assign
+dense_3/bias/Adam_1/read
+Adam/learning_rate
+Adam/beta1
+Adam/beta2
+Adam/epsilon
+Adam/update_dense/kernel/ApplyAdam
+Adam/update_dense/bias/ApplyAdam
+Adam/update_dense_1/kernel/ApplyAdam
+Adam/update_dense_1/bias/ApplyAdam
+Adam/update_dense_2/kernel/ApplyAdam
+Adam/update_dense_2/bias/ApplyAdam
+Adam/update_dense_3/kernel/ApplyAdam
+Adam/update_dense_3/bias/ApplyAdam
+Adam/mul
+Adam/Assign
+Adam/mul_1
+Adam/Assign_1
+Adam
+init
+strided_slice_16/stack
+strided_slice_16/stack_1
+strided_slice_16/stack_2
+strided_slice_16
+strided_slice_17/stack
+strided_slice_17/stack_1
+strided_slice_17/stack_2
+strided_slice_17
+strided_slice_18/stack
+strided_slice_18/stack_1
+strided_slice_18/stack_2
+strided_slice_18
+mul_38
+sub_26
+sub_27/x
+sub_27
+strided_slice_19/stack
+strided_slice_19/stack_1
+strided_slice_19/stack_2
+strided_slice_19
+strided_slice_20/stack
+strided_slice_20/stack_1
+strided_slice_20/stack_2
+strided_slice_20
+Sign_14
+add_14/x
+add_14
+sub_28/y
+sub_28
+Sign_15
+sub_29/x
+sub_29
+mul_39
+mul_40/x
+mul_40
+mul_41
+truediv_6/y
+truediv_6
+mul_42
+mul_43/y
+mul_43
+mul_44
+sub_30
+strided_slice_21/stack
+strided_slice_21/stack_1
+strided_slice_21/stack_2
+strided_slice_21
+Sign_16
+sub_31/x
+sub_31
+mul_45/x
+mul_45
+mul_46/y
+mul_46
+Sign_17
+add_15/x
+add_15
+mul_47/x
+mul_47
+sub_32/y
+sub_32
+Sign_18
+sub_33/x
+sub_33
+mul_48
+mul_49/x
+mul_49
+truediv_7/y
+truediv_7
+mul_50
+add_16
+sub_34/y
+sub_34
+Sign_19
+add_17/x
+add_17
+mul_51/x
+mul_51
+mul_52/x
+mul_52
+truediv_8/y
+truediv_8
+mul_53
+add_18
+mul_54
+add_19
+Sign_20
+sub_35/x
+sub_35
+mul_55
+add_20
+strided_slice_22/stack
+strided_slice_22/stack_1
+strided_slice_22/stack_2
+strided_slice_22
+zeros_like_4
+sub_36
+Square_4
+Const_7
+Mean_4
+Const_8
+strided_slice_23/stack
+strided_slice_23/stack_1
+strided_slice_23/stack_2
+strided_slice_23
+sub_37
+zeros_like_5
+sub_38
+Square_5
+Const_9
+Mean_5
+packed_2
+mul_56/y
+mul_56
+strided_slice_24/stack
+strided_slice_24/stack_1
+strided_slice_24/stack_2
+strided_slice_24
+strided_slice_25/stack
+strided_slice_25/stack_1
+strided_slice_25/stack_2
+strided_slice_25
+strided_slice_26/stack
+strided_slice_26/stack_1
+strided_slice_26/stack_2
+strided_slice_26
+mul_57
+sub_39
+sub_40/x
+sub_40
+strided_slice_27/stack
+strided_slice_27/stack_1
+strided_slice_27/stack_2
+strided_slice_27
+strided_slice_28/stack
+strided_slice_28/stack_1
+strided_slice_28/stack_2
+strided_slice_28
+Sign_21
+add_21/x
+add_21
+sub_41/y
+sub_41
+Sign_22
+sub_42/x
+sub_42
+mul_58
+mul_59/x
+mul_59
+mul_60
+truediv_9/y
+truediv_9
+mul_61
+mul_62/y
+mul_62
+mul_63
+sub_43
+strided_slice_29/stack
+strided_slice_29/stack_1
+strided_slice_29/stack_2
+strided_slice_29
+Sign_23
+sub_44/x
+sub_44
+mul_64/x
+mul_64
+mul_65/y
+mul_65
+Sign_24
+add_22/x
+add_22
+mul_66/x
+mul_66
+sub_45/y
+sub_45
+Sign_25
+sub_46/x
+sub_46
+mul_67
+mul_68/x
+mul_68
+truediv_10/y
+truediv_10
+mul_69
+add_23
+sub_47/y
+sub_47
+Sign_26
+add_24/x
+add_24
+mul_70/x
+mul_70
+mul_71/x
+mul_71
+truediv_11/y
+truediv_11
+mul_72
+add_25
+mul_73
+add_26
+Sign_27
+sub_48/x
+sub_48
+mul_74
+add_27
+strided_slice_30/stack
+strided_slice_30/stack_1
+strided_slice_30/stack_2
+strided_slice_30
+zeros_like_6
+sub_49
+Square_6
+Const_10
+Mean_6
+Const_11
+strided_slice_31/stack
+strided_slice_31/stack_1
+strided_slice_31/stack_2
+strided_slice_31
+sub_50
+zeros_like_7
+sub_51
+Square_7
+Const_12
+Mean_7
+packed_3
+mul_75/y
+mul_75
+Const_13
+Sum_1
+Placeholder_4
+Placeholder_5
+Placeholder_6
+Placeholder_7
+Placeholder_8
+Placeholder_9
+Placeholder_10
+Placeholder_11
+Reshape/shape
+Reshape
+Assign
+Reshape_1/shape
+Reshape_1
+Assign_1
+Reshape_2/shape
+Reshape_2
+Assign_2
+Reshape_3/shape
+Reshape_3
+Assign_3
+Reshape_4/shape
+Reshape_4
+Assign_4
+Reshape_5/shape
+Reshape_5
+Assign_5
+Reshape_6/shape
+Reshape_6
+Assign_6
+Reshape_7/shape
+Reshape_7
+Assign_7
+gradients_2/Shape
+gradients_2/grad_ys_0/Const
+gradients_2/grad_ys_0
+gradients_2/Sum_1_grad/Reshape/shape
+gradients_2/Sum_1_grad/Reshape
+gradients_2/Sum_1_grad/Const
+gradients_2/Sum_1_grad/Tile
+gradients_2/mul_56_grad/Mul
+gradients_2/mul_56_grad/Mul_1
+gradients_2/packed_2_grad/unstack
+gradients_2/Mean_4_grad/Reshape/shape
+gradients_2/Mean_4_grad/Reshape
+gradients_2/Mean_4_grad/Shape
+gradients_2/Mean_4_grad/Tile
+gradients_2/Mean_4_grad/Shape_1
+gradients_2/Mean_4_grad/Shape_2
+gradients_2/Mean_4_grad/Const
+gradients_2/Mean_4_grad/Prod
+gradients_2/Mean_4_grad/Const_1
+gradients_2/Mean_4_grad/Prod_1
+gradients_2/Mean_4_grad/Maximum/y
+gradients_2/Mean_4_grad/Maximum
+gradients_2/Mean_4_grad/floordiv
+gradients_2/Mean_4_grad/Cast
+gradients_2/Mean_4_grad/truediv
+gradients_2/Mean_5_grad/Reshape/shape
+gradients_2/Mean_5_grad/Reshape
+gradients_2/Mean_5_grad/Shape
+gradients_2/Mean_5_grad/Tile
+gradients_2/Mean_5_grad/Shape_1
+gradients_2/Mean_5_grad/Shape_2
+gradients_2/Mean_5_grad/Const
+gradients_2/Mean_5_grad/Prod
+gradients_2/Mean_5_grad/Const_1
+gradients_2/Mean_5_grad/Prod_1
+gradients_2/Mean_5_grad/Maximum/y
+gradients_2/Mean_5_grad/Maximum
+gradients_2/Mean_5_grad/floordiv
+gradients_2/Mean_5_grad/Cast
+gradients_2/Mean_5_grad/truediv
+gradients_2/Square_4_grad/Const
+gradients_2/Square_4_grad/Mul
+gradients_2/Square_4_grad/Mul_1
+gradients_2/Square_5_grad/Const
+gradients_2/Square_5_grad/Mul
+gradients_2/Square_5_grad/Mul_1
+gradients_2/sub_36_grad/Shape
+gradients_2/sub_36_grad/Shape_1
+gradients_2/sub_36_grad/BroadcastGradientArgs
+gradients_2/sub_36_grad/Sum
+gradients_2/sub_36_grad/Reshape
+gradients_2/sub_36_grad/Neg
+gradients_2/sub_36_grad/Sum_1
+gradients_2/sub_36_grad/Reshape_1
+gradients_2/sub_38_grad/Shape
+gradients_2/sub_38_grad/Shape_1
+gradients_2/sub_38_grad/BroadcastGradientArgs
+gradients_2/sub_38_grad/Sum
+gradients_2/sub_38_grad/Reshape
+gradients_2/sub_38_grad/Neg
+gradients_2/sub_38_grad/Sum_1
+gradients_2/sub_38_grad/Reshape_1
+gradients_2/strided_slice_22_grad/Shape
+gradients_2/strided_slice_22_grad/StridedSliceGrad/begin
+gradients_2/strided_slice_22_grad/StridedSliceGrad/end
+gradients_2/strided_slice_22_grad/StridedSliceGrad/strides
+gradients_2/strided_slice_22_grad/StridedSliceGrad
+gradients_2/sub_37_grad/Shape
+gradients_2/sub_37_grad/Shape_1
+gradients_2/sub_37_grad/BroadcastGradientArgs
+gradients_2/sub_37_grad/Sum
+gradients_2/sub_37_grad/Reshape
+gradients_2/sub_37_grad/Neg
+gradients_2/sub_37_grad/Sum_1
+gradients_2/sub_37_grad/Reshape_1
+gradients_2/add_20_grad/Shape
+gradients_2/add_20_grad/Shape_1
+gradients_2/add_20_grad/BroadcastGradientArgs
+gradients_2/add_20_grad/Sum
+gradients_2/add_20_grad/Reshape
+gradients_2/add_20_grad/Sum_1
+gradients_2/add_20_grad/Reshape_1
+gradients_2/strided_slice_23_grad/Shape
+gradients_2/strided_slice_23_grad/StridedSliceGrad/begin
+gradients_2/strided_slice_23_grad/StridedSliceGrad/end
+gradients_2/strided_slice_23_grad/StridedSliceGrad/strides
+gradients_2/strided_slice_23_grad/StridedSliceGrad
+gradients_2/add_19_grad/Shape
+gradients_2/add_19_grad/Shape_1
+gradients_2/add_19_grad/BroadcastGradientArgs
+gradients_2/add_19_grad/Sum
+gradients_2/add_19_grad/Reshape
+gradients_2/add_19_grad/Sum_1
+gradients_2/add_19_grad/Reshape_1
+gradients_2/mul_55_grad/Shape
+gradients_2/mul_55_grad/Shape_1
+gradients_2/mul_55_grad/BroadcastGradientArgs
+gradients_2/mul_55_grad/Mul
+gradients_2/mul_55_grad/Sum
+gradients_2/mul_55_grad/Reshape
+gradients_2/mul_55_grad/Mul_1
+gradients_2/mul_55_grad/Sum_1
+gradients_2/mul_55_grad/Reshape_1
+gradients_2/sub_30_grad/Shape
+gradients_2/sub_30_grad/Shape_1
+gradients_2/sub_30_grad/BroadcastGradientArgs
+gradients_2/sub_30_grad/Sum
+gradients_2/sub_30_grad/Reshape
+gradients_2/sub_30_grad/Neg
+gradients_2/sub_30_grad/Sum_1
+gradients_2/sub_30_grad/Reshape_1
+gradients_2/mul_54_grad/Shape
+gradients_2/mul_54_grad/Shape_1
+gradients_2/mul_54_grad/BroadcastGradientArgs
+gradients_2/mul_54_grad/Mul
+gradients_2/mul_54_grad/Sum
+gradients_2/mul_54_grad/Reshape
+gradients_2/mul_54_grad/Mul_1
+gradients_2/mul_54_grad/Sum_1
+gradients_2/mul_54_grad/Reshape_1
+gradients_2/sub_35_grad/Shape
+gradients_2/sub_35_grad/Shape_1
+gradients_2/sub_35_grad/BroadcastGradientArgs
+gradients_2/sub_35_grad/Sum
+gradients_2/sub_35_grad/Reshape
+gradients_2/sub_35_grad/Neg
+gradients_2/sub_35_grad/Sum_1
+gradients_2/sub_35_grad/Reshape_1
+gradients_2/sub_26_grad/Shape
+gradients_2/sub_26_grad/Shape_1
+gradients_2/sub_26_grad/BroadcastGradientArgs
+gradients_2/sub_26_grad/Sum
+gradients_2/sub_26_grad/Reshape
+gradients_2/sub_26_grad/Neg
+gradients_2/sub_26_grad/Sum_1
+gradients_2/sub_26_grad/Reshape_1
+gradients_2/mul_44_grad/Shape
+gradients_2/mul_44_grad/Shape_1
+gradients_2/mul_44_grad/BroadcastGradientArgs
+gradients_2/mul_44_grad/Mul
+gradients_2/mul_44_grad/Sum
+gradients_2/mul_44_grad/Reshape
+gradients_2/mul_44_grad/Mul_1
+gradients_2/mul_44_grad/Sum_1
+gradients_2/mul_44_grad/Reshape_1
+gradients_2/Sign_20_grad/zeros_like
+gradients_2/strided_slice_17_grad/Shape
+gradients_2/strided_slice_17_grad/StridedSliceGrad/begin
+gradients_2/strided_slice_17_grad/StridedSliceGrad/end
+gradients_2/strided_slice_17_grad/StridedSliceGrad/strides
+gradients_2/strided_slice_17_grad/StridedSliceGrad
+gradients_2/mul_38_grad/Shape
+gradients_2/mul_38_grad/Shape_1
+gradients_2/mul_38_grad/BroadcastGradientArgs
+gradients_2/mul_38_grad/Mul
+gradients_2/mul_38_grad/Sum
+gradients_2/mul_38_grad/Reshape
+gradients_2/mul_38_grad/Mul_1
+gradients_2/mul_38_grad/Sum_1
+gradients_2/mul_38_grad/Reshape_1
+gradients_2/sub_27_grad/Shape
+gradients_2/sub_27_grad/Shape_1
+gradients_2/sub_27_grad/BroadcastGradientArgs
+gradients_2/sub_27_grad/Sum
+gradients_2/sub_27_grad/Reshape
+gradients_2/sub_27_grad/Neg
+gradients_2/sub_27_grad/Sum_1
+gradients_2/sub_27_grad/Reshape_1
+gradients_2/strided_slice_16_grad/Shape
+gradients_2/strided_slice_16_grad/StridedSliceGrad/begin
+gradients_2/strided_slice_16_grad/StridedSliceGrad/end
+gradients_2/strided_slice_16_grad/StridedSliceGrad/strides
+gradients_2/strided_slice_16_grad/StridedSliceGrad
+gradients_2/AddN
+gradients_2/dense_3/BiasAdd_grad/BiasAddGrad
+gradients_2/AddN_1
+gradients_2/gradients/dense/MatMul_grad/MatMul_grad/MatMul
+gradients_2/gradients/dense/MatMul_grad/MatMul_grad/MatMul_1
+gradients_2/dense_3/MatMul_grad/MatMul
+gradients_2/dense_3/MatMul_grad/MatMul_1
+gradients_2/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/mul
+gradients_2/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/mul_1/x
+gradients_2/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/mul_1
+gradients_2/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/mul_2
+gradients_2/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/sub
+gradients_2/gradients/dense/Sigmoid_grad/SigmoidGrad_grad/SigmoidGrad
+gradients_2/gradients/dense_1/MatMul_grad/MatMul_grad/MatMul
+gradients_2/gradients/dense_1/MatMul_grad/MatMul_grad/MatMul_1
+gradients_2/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/mul
+gradients_2/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/mul_1/x
+gradients_2/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/mul_1
+gradients_2/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/mul_2
+gradients_2/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/sub
+gradients_2/gradients/dense_1/Sigmoid_grad/SigmoidGrad_grad/SigmoidGrad
+gradients_2/gradients/dense_2/MatMul_grad/MatMul_grad/MatMul
+gradients_2/gradients/dense_2/MatMul_grad/MatMul_grad/MatMul_1
+gradients_2/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/mul
+gradients_2/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/mul_1/x
+gradients_2/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/mul_1
+gradients_2/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/mul_2
+gradients_2/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/sub
+gradients_2/gradients/dense_2/Sigmoid_grad/SigmoidGrad_grad/SigmoidGrad
+gradients_2/AddN_2
+gradients_2/dense_2/Sigmoid_grad/SigmoidGrad
+gradients_2/gradients/dense_3/MatMul_grad/MatMul_grad/MatMul
+gradients_2/gradients/dense_3/MatMul_grad/MatMul_grad/MatMul_1
+gradients_2/dense_2/BiasAdd_grad/BiasAddGrad
+gradients_2/AddN_3
+gradients_2/dense_2/MatMul_grad/MatMul
+gradients_2/dense_2/MatMul_grad/MatMul_1
+gradients_2/AddN_4
+gradients_2/dense_1/Sigmoid_grad/SigmoidGrad
+gradients_2/AddN_5
+gradients_2/dense_1/BiasAdd_grad/BiasAddGrad
+gradients_2/dense_1/MatMul_grad/MatMul
+gradients_2/dense_1/MatMul_grad/MatMul_1
+gradients_2/AddN_6
+gradients_2/dense/Sigmoid_grad/SigmoidGrad
+gradients_2/AddN_7
+gradients_2/dense/BiasAdd_grad/BiasAddGrad
+gradients_2/dense/MatMul_grad/MatMul
+gradients_2/dense/MatMul_grad/MatMul_1
+gradients_2/AddN_8
+Reshape_8/shape
+Reshape_8
+Reshape_9/shape
+Reshape_9
+Reshape_10/shape
+Reshape_10
+Reshape_11/shape
+Reshape_11
+Reshape_12/shape
+Reshape_12
+Reshape_13/shape
+Reshape_13
+Reshape_14/shape
+Reshape_14
+Reshape_15/shape
+Reshape_15
+concat/axis
+concat
+Reshape_16/shape
+Reshape_16
+Reshape_17/shape
+Reshape_17
+Reshape_18/shape
+Reshape_18
+Reshape_19/shape
+Reshape_19
+Reshape_20/shape
+Reshape_20
+Reshape_21/shape
+Reshape_21
+Reshape_22/shape
+Reshape_22
+Reshape_23/shape
+Reshape_23
+concat_1/axis
+concat_1
+report_uninitialized_variables/IsVariableInitialized
+report_uninitialized_variables/IsVariableInitialized_1
+report_uninitialized_variables/IsVariableInitialized_2
+report_uninitialized_variables/IsVariableInitialized_3
+report_uninitialized_variables/IsVariableInitialized_4
+report_uninitialized_variables/IsVariableInitialized_5
+report_uninitialized_variables/IsVariableInitialized_6
+report_uninitialized_variables/IsVariableInitialized_7
+report_uninitialized_variables/IsVariableInitialized_8
+report_uninitialized_variables/IsVariableInitialized_9
+report_uninitialized_variables/IsVariableInitialized_10
+report_uninitialized_variables/IsVariableInitialized_11
+report_uninitialized_variables/IsVariableInitialized_12
+report_uninitialized_variables/IsVariableInitialized_13
+report_uninitialized_variables/IsVariableInitialized_14
+report_uninitialized_variables/IsVariableInitialized_15
+report_uninitialized_variables/IsVariableInitialized_16
+report_uninitialized_variables/IsVariableInitialized_17
+report_uninitialized_variables/IsVariableInitialized_18
+report_uninitialized_variables/IsVariableInitialized_19
+report_uninitialized_variables/IsVariableInitialized_20
+report_uninitialized_variables/IsVariableInitialized_21
+report_uninitialized_variables/IsVariableInitialized_22
+report_uninitialized_variables/IsVariableInitialized_23
+report_uninitialized_variables/IsVariableInitialized_24
+report_uninitialized_variables/IsVariableInitialized_25
+report_uninitialized_variables/stack
+report_uninitialized_variables/LogicalNot
+report_uninitialized_variables/Const
+report_uninitialized_variables/boolean_mask/Shape
+report_uninitialized_variables/boolean_mask/strided_slice/stack
+report_uninitialized_variables/boolean_mask/strided_slice/stack_1
+report_uninitialized_variables/boolean_mask/strided_slice/stack_2
+report_uninitialized_variables/boolean_mask/strided_slice
+report_uninitialized_variables/boolean_mask/Prod/reduction_indices
+report_uninitialized_variables/boolean_mask/Prod
+report_uninitialized_variables/boolean_mask/Shape_1
+report_uninitialized_variables/boolean_mask/strided_slice_1/stack
+report_uninitialized_variables/boolean_mask/strided_slice_1/stack_1
+report_uninitialized_variables/boolean_mask/strided_slice_1/stack_2
+report_uninitialized_variables/boolean_mask/strided_slice_1
+report_uninitialized_variables/boolean_mask/Shape_2
+report_uninitialized_variables/boolean_mask/strided_slice_2/stack
+report_uninitialized_variables/boolean_mask/strided_slice_2/stack_1
+report_uninitialized_variables/boolean_mask/strided_slice_2/stack_2
+report_uninitialized_variables/boolean_mask/strided_slice_2
+report_uninitialized_variables/boolean_mask/concat/values_1
+report_uninitialized_variables/boolean_mask/concat/axis
+report_uninitialized_variables/boolean_mask/concat
+report_uninitialized_variables/boolean_mask/Reshape
+report_uninitialized_variables/boolean_mask/Reshape_1/shape
+report_uninitialized_variables/boolean_mask/Reshape_1
+report_uninitialized_variables/boolean_mask/Where
+report_uninitialized_variables/boolean_mask/Squeeze
+report_uninitialized_variables/boolean_mask/GatherV2/axis
+report_uninitialized_variables/boolean_mask/GatherV2
+init_1
+WARNING:tensorflow:From convert_ckpt_to_pb.py:24: convert_variables_to_constants (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.convert_variables_to_constants`
+WARNING:tensorflow:From /home/bogdan/.local/lib/python3.8/site-packages/tensorflow/python/framework/convert_to_constants.py:925: extract_sub_graph (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.extract_sub_graph`
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.5) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+2023-12-02 02:20:00.266502: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.304623: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.304815: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.305187: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-12-02 02:20:00.305608: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.305752: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.305882: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.668423: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.668592: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.668727: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.668821: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:42] Overriding orig_value setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+2023-12-02 02:20:00.668846: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 571 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3080, pci bus id: 0000:27:00.0, compute capability: 8.6
+WARNING:tensorflow:From test_pb_file.py:45: FastGFile.__init__ (from tensorflow.python.platform.gfile) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.gfile.GFile.
+############ input and output node names:
+Placeholder_2
+dense_3/BiasAdd
+#########################################
+2023-12-02 02:20:00.676268: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.676449: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.676576: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.676740: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.676870: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-12-02 02:20:00.676964: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 571 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3080, pci bus id: 0000:27:00.0, compute capability: 8.6
+2023-12-02 02:20:00.677640: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:354] MLIR V1 optimization pass is not enabled
+2023-12-02 02:20:01.353251: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+Correlation Coefficient: 0.9998339792001039
