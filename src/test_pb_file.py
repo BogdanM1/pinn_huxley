@@ -22,25 +22,6 @@ grdstress = [0.0, 0.782, 1.0, 1.0, 0.0, 0.0]
 # sarcomere length
 s=1.1
 
-
-def NAnalytical(x, v):
-
-  if(x>h): return 0
-
-  V=2*v/s
-  
-  phi = (f1_0 + g1) * (h / s)
-  term1 = f1_0 / (f1_0 + g1)
-  term2 = 1 - math.exp(-phi / V)
-  term3 = math.exp(2 * g2 * (x / (s * V)))  
-  
-  if(x<0):return (term1*term2*term3)
-  
-  term2 = (x*x)/(h*h)-1 
-  term3 = phi/V
-  
-  return (term1*(1-math.exp(term2*term3)))
-
 with tf.compat.v1.Session() as sess:	    
 	with gfile.FastGFile('../models/model.pb', 'rb') as f:	        
 		graph_def = tf.compat.v1.GraphDef()	        
@@ -54,16 +35,34 @@ with tf.compat.v1.Session() as sess:
 		print(outputnodename)
 		print("#########################################")
 		tensor_input = sess.graph.get_tensor_by_name('import/'+inputnodename+':0')	        
-		tensor_output = sess.graph.get_tensor_by_name('import/'+outputnodename+':0')	        	                    	   
+		tensor_output = sess.graph.get_tensor_by_name('import/'+outputnodename+':0')	 
+ 
+def NAnalytical(x, v):
+  if(x>h): return 0
+  V=2*v/s
+  phi = (f1_0 + g1) * (h / s)
+  term1 = f1_0 / (f1_0 + g1)
+  term2 = 1 - math.exp(-phi / V)
+  term3 = math.exp(2 * g2 * (x / (s * V)))  
+  if(x<0):return (term1*term2*term3)
+  term2 = (x*x)/(h*h)-1 
+  term3 = phi/V
+  return (term1*(1-math.exp(term2*term3)))
+    
+def getResults(inputcsv, outputcsv): 
+  df = pd.read_csv(inputcsv)
+  df_in = df.iloc[:, :nfeatures]
+  test_sample = df_in.to_numpy()
+  with tf.compat.v1.Session() as sess:
+    predictions = sess.run(tensor_output, {tensor_input:test_sample})	
+  df['prediction'] = predictions[:,0]
+  if 'n' not in df:
+    df['n'] = df.apply(lambda row: NAnalytical(row['x'], row['v']), axis=1)
+  df.to_csv(outputcsv, index=False)
+  correlation_coefficient = df['n'].corr(df['prediction'])
+  print("Correlation Coefficient:", correlation_coefficient)            	                    	   
 
-df = pd.read_csv('../data/test.csv')
-df_in = df.iloc[:, :nfeatures]
-test_sample = df_in.to_numpy()
-with tf.compat.v1.Session() as sess:
-  predictions = sess.run(tensor_output, {tensor_input:test_sample})	
-df['prediction'] = predictions[:,0]
-df['nanalytical'] = df.apply(lambda row: NAnalytical(row['x'], row['v']), axis=1)
-df.to_csv('../results/output.csv', index=False)
-# Calculate the correlation coefficient
-correlation_coefficient = df['nanalytical'].corr(df['prediction'])
-print("Correlation Coefficient:", correlation_coefficient)
+getResults('../data/inputvel.csv','../results/outputvel.csv')
+getResults('../data/inputact.csv','../results/outputact.csv')
+getResults('../data/inputact1.csv','../results/outputact1.csv')
+getResults('../data/inputact2.csv','../results/outputact2.csv')

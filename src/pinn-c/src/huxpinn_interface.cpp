@@ -116,12 +116,12 @@ void huxpinn_predict()
 	huxpinn_output_values = tf_utils::GetTensorData<float>(output_tensors[0]);
 
 	/*********** debug ********************/
-	cout << "prediction\n";
+	//cout << "prediction\n";
 	for(int i=0; i< (int)huxpinn_output_values.size(); i+=1)
-		printf("%.9lf %.9lf %.9lf %.9lf %.9lf\n",huxpinn_input_values[huxpinn_nfeatures*i], huxpinn_input_values[huxpinn_nfeatures*i+1],
+		printf("%.9lf, %.9lf, %.9lf, %.9lf, %.9lf\n",huxpinn_input_values[huxpinn_nfeatures*i], huxpinn_input_values[huxpinn_nfeatures*i+1],
                                              huxpinn_input_values[huxpinn_nfeatures*i+2], huxpinn_input_values[huxpinn_nfeatures*i+3],
                                              huxpinn_output_values[i]);
-	cout << "\n";
+	//cout << "\n";
 	/***************************************/	
 	tf_utils::DeleteTensors(input_tensors);
 	tf_utils::DeleteTensors(output_tensors);	
@@ -182,8 +182,10 @@ int main()
 
 	/** params **/
 	double Kxb = 0.58, A = 130.0, L0 = 1100.0, xstart = -5.2, xend = 20.28;
-	int xdiv = 20; 
+	int xdiv = 40; 
 	/***********/
+ 
+  FILE * resultOUT = fopen("result.csv","w");
 	
 	huxpinn_init(&nqp, &Kxb, &xstart, &xend, &xdiv, &L0, &A);              
 	while (abs(time - sim_duration) > 1e-6)
@@ -192,11 +194,12 @@ int main()
 		huxpinn_set_values(&iqp,&time,&activation,&stretch,&stretch_prev);
 		huxpinn_predict();
 		huxpinn_get_values(&iqp,&stress,&dstress,&stretch);	
-		printf("%lf,%lf,%lf,%lf\n",time,stretch,stress,dstress);
+		fprintf(resultOUT, "%lf,%lf,%lf\n",time,stress,dstress);
       
     stretch_prev = stretch;
     stretch +=stretch_delta;
 	}
 	huxpinn_destroy();
+ fclose(resultOUT);
 }
 /**/
